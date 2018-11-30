@@ -45,7 +45,7 @@ Prevent common Javascript pitfalls and enforces all best practices.
 ### `@salesforce/eslint-config-lwc/extended` configuration
 
 **Goal:**
-Restrict usage of some Javascript language features known to be slow after the _COMPAT_ transformation. LWC runs in _COMPAT_ mode on older browsers (eg. IE11). In order to support new javascript syntax and language features on those browser, the LWC compiler need to do some transformations to the LWC module. Some of those transformations are known to be slow, this linting config targets certain patterns that are known to be expensive at runtime.
+Restrict usage of some Javascript language features known to be slow after the _COMPAT_ transformation. LWC runs in _COMPAT_ mode on older browsers (eg. IE11). To support new Javascript syntax and language features on older browser the LWC compiler transforms LWC modules. This linting configuraton targets patterns known to be slow in _COMPAT_ mode..
 
 **Rules:**
 `@salesforce/eslint-config-lwc/recommended` rules + restrict usage of some slow patterns in _COMPAT_.
