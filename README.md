@@ -16,7 +16,7 @@ Example of `.eslintrc`:
 
 ```json
 {
-    "extends": ["@salesforce/eslint-config-lwc/recommended", "@salesforce/eslint-config-lwc/style"]
+    "extends": ["@salesforce/eslint-config-lwc/recommended"]
 }
 ```
 
@@ -24,7 +24,7 @@ For more details about configuration please refer to the dedicated section in th
 
 ## Configurations
 
-This package exposes 4 configurations for your usage.
+This package exposes 3 configurations for your usage.
 
 ### `@salesforce/eslint-config-lwc/base` configuration
 
@@ -45,15 +45,7 @@ Prevent common Javascript pitfalls and enforces all best practices.
 ### `@salesforce/eslint-config-lwc/extended` configuration
 
 **Goal:**
-Restrict usage of some Javascript language features known to be slow after the _COMPAT_ transformation. LWC runs in _COMPAT_ mode on older browsers (eg. IE11). To support new Javascript syntax and language features on older browser the LWC compiler transforms LWC modules. This linting configuraton targets patterns known to be slow in _COMPAT_ mode..
+Restrict usage of some Javascript language features known to be slow after the _COMPAT_ transformation. LWC runs in _COMPAT_ mode on older browsers (eg. IE11). To support new Javascript syntax and language features on older browser the LWC compiler transforms LWC modules. This linting configuration targets patterns known to be slow in _COMPAT_ mode.
 
 **Rules:**
 `@salesforce/eslint-config-lwc/recommended` rules + restrict usage of some slow patterns in _COMPAT_.
-
-### `@salesforce/eslint-config-lwc/style` configuration
-
-**Goal:**
-Enforces Salesforce code style rules for LWC modules.
-
-**Rules:**
-Some of the [Stylistic Issues](https://eslint.org/docs/rules/#stylistic-issues) and [_Best Practices_](https://eslint.org/docs/rules/#best-practices) rules.

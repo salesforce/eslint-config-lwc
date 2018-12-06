@@ -39,8 +39,7 @@
     "base.js",
     "extended.js",
     "index.js",
-    "recommended.js",
-    "style.js"
+    "recommended.js"
   ],
   "husky": {
     "hooks": {
