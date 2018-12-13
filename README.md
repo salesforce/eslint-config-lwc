@@ -1,6 +1,6 @@
 # @salesforce/eslint-config-lwc
 
-> Opinionated ESLint configurations for LWC projects.
+> Opinionated ESLint configurations for Lightning Web Components (LWC) projects.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Example of `.eslintrc`:
 }
 ```
 
-For more details about configuration please refer to the dedicated section in the ESLint documentation: https://eslint.org/docs/user-guide/configuring#using-a-shareable-configuration-package
+For more details about configuration, please refer to the dedicated section in the ESLint documentation: https://eslint.org/docs/user-guide/configuring#using-a-shareable-configuration-package
 
 ## Configurations
 
@@ -29,7 +29,7 @@ This package exposes 3 configurations for your usage.
 ### `@salesforce/eslint-config-lwc/base` configuration
 
 **Goal:**
-Prevent common pitfalls with LWC, and other Salesforce platform restrictions.
+Prevent common pitfalls with LWC, and enforce other Salesforce platform restrictions.
 
 **Rules:**
 LWC specific rules only.
@@ -37,7 +37,7 @@ LWC specific rules only.
 ### `@salesforce/eslint-config-lwc/recommended` configuration
 
 **Goal:**
-Prevent common Javascript pitfalls and enforces all best practices.
+Prevent common Javascript pitfalls and enforce all best practices.
 
 **Rules:**
 `@salesforce/eslint-config-lwc/base` rules + Most of the base [_Potential errors_](https://eslint.org/docs/rules/#possible-errors) rules + Some of the [_Best Practices_](https://eslint.org/docs/rules/#best-practices) rules.
