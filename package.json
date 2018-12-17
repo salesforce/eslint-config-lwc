@@ -31,6 +31,10 @@
   "peerDependencies": {
     "eslint": "^5.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salesforce/eslint-config-lwc.git"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
