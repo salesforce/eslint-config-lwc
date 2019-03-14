@@ -6,6 +6,8 @@
  */
 'use strict';
 
+const restrictedGlobals = require('eslint-restricted-globals');
+
 module.exports = {
     plugins: ['import', 'jest'],
 
@@ -81,14 +83,7 @@ module.exports = {
         // Variables
         // https://eslint.org/docs/rules/#variables
         'no-label-var': 'error',
-        'no-restricted-globals': [
-            'error',
-            {
-                name: 'event',
-                message:
-                    'Use local parameter instead of accessing the current event out of the global object.',
-            },
-        ],
+        'no-restricted-globals': ['error'].concat(restrictedGlobals),
         'no-shadow': 'error',
         'no-shadow-restricted-names': 'error',
         'no-undef-init': 'error',
