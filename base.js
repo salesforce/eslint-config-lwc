@@ -16,7 +16,7 @@ module.exports = {
         '@lwc/lwc/no-deprecated': 'error',
 
         // LWC public property syntax validation
-        '@lwc/lwc/no-leading-uppercase-api-name': 'error',
+        '@lwc/lwc/no-leading-uppercase-api-name': 'warn',
 
         // LWC decorator validation
         '@lwc/lwc/valid-api': 'error',
