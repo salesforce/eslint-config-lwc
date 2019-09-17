@@ -16,7 +16,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@lwc/eslint-plugin-lwc": "^0.6.0",
+    "@lwc/eslint-plugin-lwc": "^0.8.0",
     "babel-eslint": "^10.0.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.0.0",
@@ -48,7 +48,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn format"
     }
   },
   "lint-staged": {
