@@ -103,11 +103,12 @@ module.exports = {
 
         // LWC specific rules
         '@lwc/lwc/no-async-operation': 'error',
-        '@lwc/lwc/no-inner-html': 'error',
         '@lwc/lwc/no-document-query': 'error',
+        '@lwc/lwc/no-inner-html': 'error',
+        '@lwc/lwc/no-leading-uppercase-api-name': 'error',
 
         // Disable unresolved import rule since it doesn't work well with the way the LWC compiler
         // resolves the different modules
-        'import/no-unresolved': 0,
+        'import/no-unresolved': 'off',
     },
 };
