@@ -102,6 +102,7 @@ module.exports = {
         'no-useless-rename': 'error',
 
         // LWC specific rules
+        '@lwc/lwc/no-api-reassignments': 'error',
         '@lwc/lwc/no-async-operation': 'error',
         '@lwc/lwc/no-document-query': 'error',
         '@lwc/lwc/no-inner-html': 'error',
