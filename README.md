@@ -1,6 +1,8 @@
 # @salesforce/eslint-config-lwc
 
-> Opinionated ESLint configurations for Lightning Web Components (LWC) projects.
+Opinionated ESLint configurations for Lightning Web Components (LWC) projects.
+
+Before you configure ESLint, install the [plugin](https://github.com/salesforce/eslint-plugin-lwc).
 
 ## Installation
 
