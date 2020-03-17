@@ -32,7 +32,7 @@ This package exposes 3 configurations for your usage.
 Prevent common pitfalls with LWC, and enforce other Salesforce platform restrictions.
 
 **Rules:**
-LWC specific rules only.
+[_LWC specific rules_](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#lwc) only.
 
 ### `@salesforce/eslint-config-lwc/recommended` configuration
 
@@ -40,7 +40,7 @@ LWC specific rules only.
 Prevent common Javascript pitfalls and enforce all best practices.
 
 **Rules:**
-`@salesforce/eslint-config-lwc/base` rules + Most of the base [_Potential errors_](https://eslint.org/docs/rules/#possible-errors) rules + Some of the [_Best Practices_](https://eslint.org/docs/rules/#best-practices) rules.
+`@salesforce/eslint-config-lwc/base` rules + Most of the base [_Potential errors_](https://eslint.org/docs/rules/#possible-errors) rules + Some of the [_Best Practices_](https://eslint.org/docs/rules/#best-practices) rules + [_LWC Best Practices_](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#best-practices).
 
 ### `@salesforce/eslint-config-lwc/extended` configuration
 
@@ -48,4 +48,4 @@ Prevent common Javascript pitfalls and enforce all best practices.
 Restrict usage of some Javascript language features known to be slow after the _COMPAT_ transformation. LWC runs in _COMPAT_ mode on older browsers (eg. IE11). To support new Javascript syntax and language features on older browser the LWC compiler transforms LWC modules. This linting configuration targets patterns known to be slow in _COMPAT_ mode.
 
 **Rules:**
-`@salesforce/eslint-config-lwc/recommended` rules + restrict usage of some slow patterns in _COMPAT_.
+`@salesforce/eslint-config-lwc/recommended` rules + restrict usage of some slow patterns in [_COMPAT_](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#compat-performance).
