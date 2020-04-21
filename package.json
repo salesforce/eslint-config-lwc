@@ -16,18 +16,18 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@lwc/eslint-plugin-lwc": "^0.9.0",
-    "babel-eslint": "^10.0.3",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jest": "^23.6.0",
-    "eslint-restricted-globals": "^0.2.0"
+    "@lwc/eslint-plugin-lwc": "~0.9.0",
+    "babel-eslint": "~10.1.0",
+    "eslint-plugin-import": "~2.20.2",
+    "eslint-plugin-jest": "~23.8.2",
+    "eslint-restricted-globals": "~0.2.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "husky": "^4.2.1",
-    "lint-staged": "^10.0.7",
-    "mocha": "^7.0.1",
-    "prettier": "^1.19.1"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.6",
+    "mocha": "^7.1.1",
+    "prettier": "^2.0.4"
   },
   "peerDependencies": {
     "eslint": "^6.0.0"
