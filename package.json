@@ -27,7 +27,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.1.6",
     "mocha": "^7.1.1",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.4"
   },
   "peerDependencies": {
     "eslint": "^6.0.0"
