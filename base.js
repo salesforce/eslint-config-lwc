@@ -6,6 +6,113 @@
  */
 'use strict';
 
+const KNOWN_WIRE_ADAPTERS = [
+    {
+        module: 'lightning/**',
+        identifier: '*',
+    },
+    // All apex, apexContinuation methods
+    {
+        module: '@salesforce/**',
+        identifier: '*',
+    },
+];
+
+const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
+    {
+        module: 'lightning/communityNavigationMenuApi',
+        identifier: 'getCommunityNavigationMenu',
+    },
+    {
+        module: 'lightning/messageService',
+        identifier: 'MessageContext',
+    },
+    {
+        module: 'lightning/navigation',
+        identifier: 'CurrentPageReference',
+    },
+    {
+        module: 'lightning/uiActionsApi',
+        identifier: 'getLookupActions',
+    },
+    {
+        module: 'lightning/uiLayoutApi',
+        identifier: 'getLayout',
+    },
+    {
+        module: 'lightning/uiLayoutApi',
+        identifier: 'getLayoutUserState',
+    },
+    {
+        module: 'lightning/uiListApi',
+        identifier: 'getListUi',
+    },
+    {
+        module: 'lightning/uiLookupsApi',
+        identifier: 'getLookupRecords',
+    },
+    {
+        module: 'lightning/uiObjectInfoApi',
+        identifier: 'getObjectInfo',
+    },
+    {
+        module: 'lightning/uiObjectInfoApi',
+        identifier: 'getPicklistValues',
+    },
+    {
+        module: 'lightning/uiObjectInfoApi',
+        identifier: 'getPicklistValuesByRecordType',
+    },
+    {
+        module: 'lightning/uiRecordActionsApi',
+        identifier: 'getRecordActions',
+    },
+    {
+        module: 'lightning/uiRecordActionsApi',
+        identifier: 'getRecordEditActions',
+    },
+    {
+        module: 'lightning/uiRecordActionsApi',
+        identifier: 'getRelatedListRecordActions',
+    },
+    {
+        module: 'lightning/uiRecordApi',
+        identifier: 'getRecord',
+    },
+    {
+        module: 'lightning/uiRecordApi',
+        identifier: 'getRecordCreateDefaults',
+    },
+    {
+        module: 'lightning/uiRecordApi',
+        identifier: 'getRecordUi',
+    },
+    {
+        module: 'lightning/uiRecordAvatarApi',
+        identifier: 'getRecordAvatars',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListInfo',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListInfos',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListRecords',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsCount',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsInfo',
+    },
+];
+
 module.exports = {
     extends: [require.resolve('./lib/defaults')],
 
@@ -19,5 +126,19 @@ module.exports = {
         '@lwc/lwc/valid-api': 'error',
         '@lwc/lwc/valid-track': 'error',
         '@lwc/lwc/valid-wire': 'error',
+
+        // LWC wire adapters validation
+        '@lwc/lwc/no-unknown-wire-adapters': [
+            'error',
+            {
+                adapters: KNOWN_WIRE_ADAPTERS,
+            },
+        ],
+        '@lwc/lwc/no-unexpected-wire-adapter-usages': [
+            'error',
+            {
+                adapters: WIRE_ADAPTERS_WITH_RESTRICTED_USE,
+            },
+        ],
     },
 };

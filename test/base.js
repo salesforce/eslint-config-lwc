@@ -40,4 +40,49 @@ describe('base config', () => {
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/valid-api');
     });
+
+    it('should include @lwc/lwc/no-unknown-wire-adapters rule', () => {
+        const cli = new eslint.CLIEngine({
+            useEslintrc: false,
+            baseConfig: {
+                extends: '@salesforce/eslint-config-lwc/base',
+            },
+        });
+
+        const report = cli.executeOnText(`
+            import { wire } from 'lwc';
+            import { Baz } from 'c/cmp';
+            class Foo {
+                @wire(Baz)
+                foo;
+            }
+        `);
+
+        const { messages } = report.results[0];
+        assert.equal(messages.length, 1);
+        assert.equal(messages[0].ruleId, '@lwc/lwc/no-unknown-wire-adapters');
+    });
+
+    it('should include @lwc/lwc/no-unexpected-wire-adapter-usages', () => {
+        const cli = new eslint.CLIEngine({
+            useEslintrc: false,
+            baseConfig: {
+                extends: '@salesforce/eslint-config-lwc/base',
+            },
+        });
+
+        const report = cli.executeOnText(`
+            import { wire } from 'lwc';
+            import { CurrentPageReference } from 'lightning/navigation';
+            const reference = CurrentPageReference;
+            class Foo {
+                @wire(CurrentPageReference)
+                foo;
+            }
+        `);
+
+        const { messages } = report.results[0];
+        assert.equal(messages.length, 1);
+        assert.equal(messages[0].ruleId, '@lwc/lwc/no-unexpected-wire-adapter-usages');
+    });
 });
