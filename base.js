@@ -28,10 +28,6 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'CurrentPageReference',
     },
     {
-        module: 'lightning/uiActionsApi',
-        identifier: 'getLookupActions',
-    },
-    {
         module: 'lightning/uiLayoutApi',
         identifier: 'getLayout',
     },
