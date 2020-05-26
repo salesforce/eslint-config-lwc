@@ -55,30 +55,6 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         module: 'lightning/uiRecordApi',
         identifier: 'getRecordUi',
     },
-    {
-        module: 'lightning/uiRecordAvatarApi',
-        identifier: 'getRecordAvatars',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListInfo',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListInfos',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListRecords',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListsCount',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListsInfo',
-    },
 ];
 
 module.exports = {
