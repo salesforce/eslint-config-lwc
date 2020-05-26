@@ -20,10 +20,6 @@ const KNOWN_WIRE_ADAPTERS = [
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
-        module: 'lightning/communityNavigationMenuApi',
-        identifier: 'getCommunityNavigationMenu',
-    },
-    {
         module: 'lightning/messageService',
         identifier: 'MessageContext',
     },
