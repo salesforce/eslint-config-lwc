@@ -6,6 +6,57 @@
  */
 'use strict';
 
+const KNOWN_WIRE_ADAPTERS = [
+    {
+        module: 'lightning/**',
+        identifier: '*',
+    },
+    // All apex, apexContinuation methods
+    {
+        module: '@salesforce/**',
+        identifier: '*',
+    },
+];
+
+const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
+    {
+        module: 'lightning/messageService',
+        identifier: 'MessageContext',
+    },
+    {
+        module: 'lightning/navigation',
+        identifier: 'CurrentPageReference',
+    },
+    {
+        module: 'lightning/uiListApi',
+        identifier: 'getListUi',
+    },
+    {
+        module: 'lightning/uiObjectInfoApi',
+        identifier: 'getObjectInfo',
+    },
+    {
+        module: 'lightning/uiObjectInfoApi',
+        identifier: 'getPicklistValues',
+    },
+    {
+        module: 'lightning/uiObjectInfoApi',
+        identifier: 'getPicklistValuesByRecordType',
+    },
+    {
+        module: 'lightning/uiRecordApi',
+        identifier: 'getRecord',
+    },
+    {
+        module: 'lightning/uiRecordApi',
+        identifier: 'getRecordCreateDefaults',
+    },
+    {
+        module: 'lightning/uiRecordApi',
+        identifier: 'getRecordUi',
+    },
+];
+
 module.exports = {
     extends: [require.resolve('./lib/defaults')],
 
@@ -19,5 +70,19 @@ module.exports = {
         '@lwc/lwc/valid-api': 'error',
         '@lwc/lwc/valid-track': 'error',
         '@lwc/lwc/valid-wire': 'error',
+
+        // LWC wire adapters validation
+        '@lwc/lwc/no-unknown-wire-adapters': [
+            'error',
+            {
+                adapters: KNOWN_WIRE_ADAPTERS,
+            },
+        ],
+        '@lwc/lwc/no-unexpected-wire-adapter-usages': [
+            'error',
+            {
+                adapters: WIRE_ADAPTERS_WITH_RESTRICTED_USE,
+            },
+        ],
     },
 };
