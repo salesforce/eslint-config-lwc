@@ -44,18 +44,6 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'getPicklistValuesByRecordType',
     },
     {
-        module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRecordActions',
-    },
-    {
-        module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRecordEditActions',
-    },
-    {
-        module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRelatedListRecordActions',
-    },
-    {
         module: 'lightning/uiRecordApi',
         identifier: 'getRecord',
     },
