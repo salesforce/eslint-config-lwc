@@ -16,11 +16,11 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@lwc/eslint-plugin-lwc": "~0.10.0",
-    "babel-eslint": "~10.1.0",
-    "eslint-plugin-import": "~2.20.2",
-    "eslint-plugin-jest": "~23.8.2",
-    "eslint-restricted-globals": "~0.2.0"
+    "@lwc/eslint-plugin-lwc": "^0.10.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-restricted-globals": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -30,7 +30,7 @@
     "prettier": "^2.0.4"
   },
   "peerDependencies": {
-    "eslint": "^6.0.0"
+    "eslint": "^6.0.0 || ^7.0.0"
   },
   "repository": {
     "type": "git",
