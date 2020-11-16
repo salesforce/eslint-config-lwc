@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "format": "prettier --write \"**/*.{js,md}\"",
+    "format:check": "prettier --check \"**/*.{js,md}\"",
     "lint": "eslint",
     "test": "mocha"
   },
