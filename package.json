@@ -18,19 +18,19 @@
   "dependencies": {
     "@lwc/eslint-plugin-lwc": "~0.10.0",
     "babel-eslint": "~10.1.0",
-    "eslint-plugin-import": "~2.20.2",
+    "eslint-plugin-import": "~2.22.1",
     "eslint-plugin-jest": "~23.8.2",
     "eslint-restricted-globals": "~0.2.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.1.6",
-    "mocha": "^7.1.1",
-    "prettier": "^2.0.4"
+    "eslint": "^7.13.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "mocha": "^8.2.1",
+    "prettier": "^2.1.2"
   },
   "peerDependencies": {
-    "eslint": "^6.0.0"
+    "eslint": "^6 || ^7"
   },
   "repository": {
     "type": "git",
