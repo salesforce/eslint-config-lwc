@@ -1,7 +1,30 @@
 version: 2.1
 
-jobs: 
+jobs:
   build:
+    docker:
+      - image: circleci/node
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "yarn.lock" }}
+          - v1-dependencies-
+      
+      - run: yarn install --frozen-lock
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+      - run: yarn format:check
+      - run: yarn lint
+      - run: yarn test
+
+  test_eslint:
     docker:
       - image: circleci/node
 
@@ -14,27 +37,20 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "yarn.lock" }}-<< parameters.eslint >>
+          - v1-dependencies-{{ checksum "yarn.lock" }}
           - v1-dependencies-
       
       - run: yarn install --frozen-lock
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock" }}-<< parameters.eslint >>
-
       - run: yarn add --dev eslint@<< parameters.eslint >>
-
-      - run: yarn format:check
-      - run: yarn lint
       - run: yarn test
 
 workflows:
   workflow:
     jobs:
-      - build:
-          name: build-eslint-v<<matrix.eslint>>
+      - build
+      - test_eslint:
+          requires:
+            - build
           matrix:
             parameters:
               eslint: ["6", "7"]
