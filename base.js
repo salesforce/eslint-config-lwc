@@ -37,6 +37,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/uiObjectInfoApi',
+        identifier: 'getObjectInfos',
+    },
+    {
+        module: 'lightning/uiObjectInfoApi',
         identifier: 'getPicklistValues',
     },
     {
