@@ -126,10 +126,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@lwc/eslint-plugin-lwc@~0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-0.10.0.tgz#e282910b01b3b403d8fec03d34c4c853e29c4676"
-  integrity sha512-UsosUow0xWrzzcSK1fWDWHKBT81/pJz1/icfv7w8T+BCE9G4Kb4TwJexHLOIZvY7e/dv4Fjme4lTOWehuNE5Sg==
+"@lwc/eslint-plugin-lwc@~0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-0.11.0.tgz#1c69cc673b9798e04e87ececb8529b93eb2215b1"
+  integrity sha512-wJOD4XWOH91GaZfypMSKfEeMXqMfvKdsb2gSJ/9FEwJVlziKg1aagtRYJh2ln3DyEZV33tBC/p/dWzIeiwa1tg==
   dependencies:
     minimatch "^3.0.4"
 

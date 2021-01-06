@@ -34,4 +34,24 @@ describe('recommended config', () => {
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/no-document-query');
     });
+
+    it('should forbid mixing uppercase and underscore characters in public properties', () => {
+        const cli = new eslint.CLIEngine({
+            useEslintrc: false,
+            baseConfig: {
+                extends: '@salesforce/eslint-config-lwc/recommended',
+            },
+        });
+
+        const report = cli.executeOnText(`
+            import { LightningElement, api } from 'lwc';
+            export default class Foo extends LightningElement {
+                @api bar_Foo() {}
+            }
+        `);
+
+        const { messages } = report.results[0];
+        assert.equal(messages.length, 1);
+        assert.equal(messages[0].ruleId, '@lwc/lwc/valid-api');
+    });
 });
