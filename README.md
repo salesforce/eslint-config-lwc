@@ -49,3 +49,5 @@ Restrict usage of some Javascript language features known to be slow after the _
 
 **Rules:**
 `@salesforce/eslint-config-lwc/recommended` rules + restrict usage of some slow patterns in [_COMPAT_](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#compat-performance).
+
+**Tests:**
