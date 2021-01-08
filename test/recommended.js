@@ -63,4 +63,24 @@ describe('recommended config', () => {
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/prefer-custom-event');
     });
+
+    it('should forbid duplicate class members', () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const report = cli.executeOnText(`
+            import { LightningElement, api } from 'lwc';
+
+            export default class App extends LightningElement {
+                @api foo = 1;
+            
+                set foo(value) { this._foo = value }
+                get foo() { return this._foo; }
+            }
+        `);
+
+        const { messages } = report.results[0];
+        assert.equal(messages.length, 2);
+        assert.equal(messages[0].ruleId, '@lwc/lwc/no-dupe-class-members');
+        assert.equal(messages[1].ruleId, '@lwc/lwc/no-dupe-class-members');
+    });
 });
