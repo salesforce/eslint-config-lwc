@@ -107,6 +107,7 @@ module.exports = {
         '@lwc/lwc/no-document-query': 'error',
         '@lwc/lwc/no-inner-html': 'error',
         '@lwc/lwc/no-leading-uppercase-api-name': 'error',
+        '@lwc/lwc/prefer-custom-event': 'error',
         '@lwc/lwc/valid-api': [
             'error',
             {

@@ -11,6 +11,15 @@ const eslint = require('eslint');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
+function getCliEngineWithRecommendedRules() {
+    return new eslint.CLIEngine({
+        useEslintrc: false,
+        baseConfig: {
+            extends: '@salesforce/eslint-config-lwc/recommended',
+        },
+    });
+}
+
 describe('recommended config', () => {
     before(() => {
         linkConfig();
@@ -21,12 +30,7 @@ describe('recommended config', () => {
     });
 
     it('should load properly recommended config', () => {
-        const cli = new eslint.CLIEngine({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/recommended',
-            },
-        });
+        const cli = getCliEngineWithRecommendedRules();
 
         const report = cli.executeOnText('document.querySelectorAll("a")');
 
@@ -36,12 +40,7 @@ describe('recommended config', () => {
     });
 
     it('should forbid mixing uppercase and underscore characters in public properties', () => {
-        const cli = new eslint.CLIEngine({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/recommended',
-            },
-        });
+        const cli = getCliEngineWithRecommendedRules();
 
         const report = cli.executeOnText(`
             import { LightningElement, api } from 'lwc';
@@ -53,5 +52,15 @@ describe('recommended config', () => {
         const { messages } = report.results[0];
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/valid-api');
+    });
+
+    it('should suggest usage of CustomEvent over Event constructor', () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const report = cli.executeOnText(`dispatchEvent(new Event('test'));`);
+
+        const { messages } = report.results[0];
+        assert.equal(messages.length, 1);
+        assert.equal(messages[0].ruleId, '@lwc/lwc/prefer-custom-event');
     });
 });
