@@ -105,8 +105,16 @@ module.exports = {
         '@lwc/lwc/no-api-reassignments': 'error',
         '@lwc/lwc/no-async-operation': 'error',
         '@lwc/lwc/no-document-query': 'error',
+        '@lwc/lwc/no-dupe-class-members': 'error',
         '@lwc/lwc/no-inner-html': 'error',
         '@lwc/lwc/no-leading-uppercase-api-name': 'error',
+        '@lwc/lwc/prefer-custom-event': 'error',
+        '@lwc/lwc/valid-api': [
+            'error',
+            {
+                disallowUnderscoreUppercaseMix: true,
+            },
+        ],
 
         // Disable unresolved import rule since it doesn't work well with the way the LWC compiler
         // resolves the different modules
