@@ -104,6 +104,7 @@ module.exports = {
         // LWC specific rules
         '@lwc/lwc/no-api-reassignments': 'error',
         '@lwc/lwc/no-async-operation': 'error',
+        '@lwc/lwc/no-attributes-during-construction': 'error',
         '@lwc/lwc/no-document-query': 'error',
         '@lwc/lwc/no-dupe-class-members': 'error',
         '@lwc/lwc/no-inner-html': 'error',

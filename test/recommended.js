@@ -83,4 +83,23 @@ describe('recommended config', () => {
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-dupe-class-members');
         assert.strictEqual(messages[1].ruleId, '@lwc/lwc/no-dupe-class-members');
     });
+
+    it('should prevent attributes set during construction', () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const report = cli.executeOnText(`
+            import { LightningElement } from 'lwc';
+
+            export default class App extends LightningElement {
+                constructor() {
+                    super();
+                    this.tabIndex = '-1';
+                }
+            }
+        `);
+
+        const { messages } = report.results[0];
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-attributes-during-construction');
+    });
 });
