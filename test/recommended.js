@@ -35,8 +35,8 @@ describe('recommended config', () => {
         const report = cli.executeOnText('document.querySelectorAll("a")');
 
         const { messages } = report.results[0];
-        assert.equal(messages.length, 1);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/no-document-query');
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-document-query');
     });
 
     it('should forbid mixing uppercase and underscore characters in public properties', () => {
@@ -50,8 +50,8 @@ describe('recommended config', () => {
         `);
 
         const { messages } = report.results[0];
-        assert.equal(messages.length, 1);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/valid-api');
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/valid-api');
     });
 
     it('should suggest usage of CustomEvent over Event constructor', () => {
@@ -60,8 +60,8 @@ describe('recommended config', () => {
         const report = cli.executeOnText(`dispatchEvent(new Event('test'));`);
 
         const { messages } = report.results[0];
-        assert.equal(messages.length, 1);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/prefer-custom-event');
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/prefer-custom-event');
     });
 
     it('should forbid duplicate class members', () => {
@@ -72,15 +72,34 @@ describe('recommended config', () => {
 
             export default class App extends LightningElement {
                 @api foo = 1;
-            
+
                 set foo(value) { this._foo = value }
                 get foo() { return this._foo; }
             }
         `);
 
         const { messages } = report.results[0];
-        assert.equal(messages.length, 2);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/no-dupe-class-members');
-        assert.equal(messages[1].ruleId, '@lwc/lwc/no-dupe-class-members');
+        assert.strictEqual(messages.length, 2);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-dupe-class-members');
+        assert.strictEqual(messages[1].ruleId, '@lwc/lwc/no-dupe-class-members');
+    });
+
+    it('should prevent attributes set during construction', () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const report = cli.executeOnText(`
+            import { LightningElement } from 'lwc';
+
+            export default class App extends LightningElement {
+                constructor() {
+                    super();
+                    this.tabIndex = '-1';
+                }
+            }
+        `);
+
+        const { messages } = report.results[0];
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-attributes-during-construction');
     });
 });
