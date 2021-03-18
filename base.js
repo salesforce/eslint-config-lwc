@@ -20,6 +20,62 @@ const KNOWN_WIRE_ADAPTERS = [
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'executeQuery',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getAnalyticsLimits',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataflowJob',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataflowJobNode',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataflowJobNodes',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataflowJobs',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataset',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDatasets',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getRecipe',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getRecipes',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getReplicatedDatasets',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getSchedule',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getWaveFolders',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getXmd',
+    },
+    {
         module: 'lightning/messageService',
         identifier: 'MessageContext',
     },
