@@ -146,7 +146,7 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@lwc/eslint-plugin-lwc@~0.12.2":
+"@lwc/eslint-plugin-lwc@~0.12.2-232.0":
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-0.12.2.tgz#345d17c9f2ffd3579630659bdb0d8c90c2c16531"
   integrity sha512-6BBp3bDAhf3no/cRADIlP3/dVm4eZ48sVwC/qYuRKnB843Qu1+rP4yzmZmTivApbetFkE+HN3ZQwcoMzj/smKw==

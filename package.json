@@ -17,7 +17,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@lwc/eslint-plugin-lwc": "~0.12.2",
+    "@lwc/eslint-plugin-lwc": "~0.12.2-232.0",
     "babel-eslint": "~10.1.0",
     "eslint-plugin-import": "~2.22.1",
     "eslint-plugin-jest": "~23.8.2",
