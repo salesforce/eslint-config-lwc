@@ -16,6 +16,10 @@ const KNOWN_WIRE_ADAPTERS = [
         module: '@salesforce/**',
         identifier: '*',
     },
+    {
+        module: 'commerce/cartApi',
+        identifier: 'CartSummaryAdapter',
+    },
 ];
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
