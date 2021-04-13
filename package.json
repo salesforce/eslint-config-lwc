@@ -1,6 +1,6 @@
 {
   "name": "@salesforce/eslint-config-lwc",
-  "version": "0.11.0",
+  "version": "0.11.0-232.0",
   "main": "index.js",
   "license": "MIT",
   "description": "Opinionated ESLint configurations for LWC projects",
