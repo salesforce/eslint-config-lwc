@@ -24,6 +24,10 @@ const KNOWN_WIRE_ADAPTERS = [
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
+        module: 'commerce/cartApi',
+        identifier: 'CartSummaryAdapter',
+    },
+    {
         module: 'lightning/analyticsWaveApi',
         identifier: 'executeQuery',
     },
