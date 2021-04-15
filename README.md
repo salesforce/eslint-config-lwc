@@ -5,8 +5,10 @@
 ## Installation
 
 ```
-$ npm install eslint @salesforce/eslint-config-lwc --save-dev
+$ npm install --save-dev @salesforce/eslint-config-lwc @lwc/eslint-plugin-lwc eslint eslint-plugin-import eslint-plugin-jest
 ```
+
+Note that `@lwc/eslint-plugin-lwc`, `eslint`, `eslint-plugin-import`, and `eslint-plugin-jest` are peer dependencies of `@salesforce/eslint-config-lwc`.
 
 ## Usage
 
