@@ -232,6 +232,11 @@
   dependencies:
     minimatch "^3.0.4"
 
+"@salesforce/eslint-plugin-lightning@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/eslint-plugin-lightning/-/eslint-plugin-lightning-0.1.0.tgz#836f9578454be338425fbfc806e4380a7e0cd202"
+  integrity sha512-eMJtc8zafGcrMHRuSta0zxpNXDj+B1MnDDccIMHWwT/PBHIKewZuUCU6D5fOEseID2+AIAXJXnJUrqsbMRUPjg==
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
