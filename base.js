@@ -128,7 +128,9 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
 module.exports = {
     extends: [require.resolve('./lib/defaults')],
 
-    plugins: ['@lwc/eslint-plugin-lwc'],
+    plugins: [
+        '@lwc/eslint-plugin-lwc', // https://github.com/salesforce/eslint-plugin-lwc
+    ],
 
     rules: {
         // LWC lifecycle hooks validation

@@ -9,13 +9,17 @@
 const restrictedGlobals = require('eslint-restricted-globals');
 
 module.exports = {
-    plugins: ['import', 'jest'],
+    plugins: [
+        'import', // https://github.com/benmosher/eslint-plugin-import
+        'jest', // https://github.com/jest-community/eslint-plugin-jest
+        '@salesforce/eslint-plugin-lightning', // https://github.com/salesforce/eslint-plugin-lightning
+    ],
 
     extends: [
         require.resolve('./base'),
-        'eslint:recommended', // https://eslint.org/docs/rules/
-        'plugin:import/errors', // https://github.com/benmosher/eslint-plugin-import
-        'plugin:jest/recommended', // https://github.com/jest-community/eslint-plugin-jest
+        'eslint:recommended',
+        'plugin:import/errors',
+        'plugin:jest/recommended',
     ],
 
     env: {
@@ -116,6 +120,9 @@ module.exports = {
                 disallowUnderscoreUppercaseMix: true,
             },
         ],
+
+        // Lightning
+        '@salesforce/lightning/valid-apex-method-invocation': 'error',
 
         // Disable unresolved import rule since it doesn't work well with the way the LWC compiler
         // resolves the different modules

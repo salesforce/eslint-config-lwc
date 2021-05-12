@@ -102,4 +102,20 @@ describe('recommended config', () => {
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-attributes-during-construction');
     });
+
+    it('should prevent invalid usage of Apex method', () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const report = cli.executeOnText(`
+            import findContacts from '@salesforce/apex/ContactController.findContacts';
+            findContacts('Ted');
+        `);
+
+        const { messages } = report.results[0];
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(
+            messages[0].ruleId,
+            '@salesforce/lightning/valid-apex-method-invocation',
+        );
+    });
 });
