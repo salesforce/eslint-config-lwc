@@ -20,9 +20,9 @@ function getCliEngineWithRecommendedRules() {
             // Required for https://github.com/jest-community/eslint-plugin-jest
             settings: {
                 jest: {
-                    version: '26'
-                }
-            }
+                    version: '26',
+                },
+            },
         },
     });
 }
