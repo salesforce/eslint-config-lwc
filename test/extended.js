@@ -25,6 +25,13 @@ describe('extended config', () => {
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/extended',
+
+                // Required for https://github.com/jest-community/eslint-plugin-jest
+                settings: {
+                    jest: {
+                        version: '26',
+                    },
+                },
             },
         });
 

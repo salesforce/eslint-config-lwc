@@ -16,6 +16,13 @@ function getCliEngineWithRecommendedRules() {
         useEslintrc: false,
         baseConfig: {
             extends: '@salesforce/eslint-config-lwc/recommended',
+
+            // Required for https://github.com/jest-community/eslint-plugin-jest
+            settings: {
+                jest: {
+                    version: '26',
+                },
+            },
         },
     });
 }
