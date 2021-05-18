@@ -11,26 +11,27 @@
     "salesforce"
   ],
   "scripts": {
+    "prepare": "husky install",
     "format": "prettier --write \"**/*.{js,md}\"",
     "format:check": "prettier --check \"**/*.{js,md}\"",
     "lint": "eslint",
     "test": "mocha"
   },
   "dependencies": {
-    "@babel/core": "~7.13.14",
+    "@babel/core": "~7.14.0",
     "@babel/eslint-parser": "~7.13.14",
     "eslint-restricted-globals": "~0.2.0"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.0.0",
     "@salesforce/eslint-plugin-lightning": "^0.1.0",
-    "eslint": "^7.22.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-jest": "^24.3.6",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
-    "mocha": "^8.3.2",
-    "prettier": "^2.2.1"
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "mocha": "^8.4.0",
+    "prettier": "^2.3.0"
   },
   "peerDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.0.0",
@@ -54,11 +55,6 @@
     "index.js",
     "recommended.js"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": [
       "eslint"
