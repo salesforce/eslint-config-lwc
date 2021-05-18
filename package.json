@@ -50,6 +50,7 @@
     "lib",
     "base.js",
     "extended.js",
+    "i18n.js",
     "index.js",
     "recommended.js"
   ],
