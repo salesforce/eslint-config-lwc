@@ -20,12 +20,76 @@ const KNOWN_WIRE_ADAPTERS = [
         module: 'commerce/cartApi',
         identifier: 'CartSummaryAdapter',
     },
+    {
+        module: 'commerce/contextApi',
+        identifier: 'AppContextAdapter',
+    },
+    {
+        module: 'commerce/contextApi',
+        identifier: 'SessionContextAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductCategoryAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductCategoryHierarchyAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductCategoryPathAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductPricingAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductSearchAdapter',
+    },
 ];
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
         module: 'commerce/cartApi',
         identifier: 'CartSummaryAdapter',
+    },
+    {
+        module: 'commerce/contextApi',
+        identifier: 'AppContextAdapter',
+    },
+    {
+        module: 'commerce/contextApi',
+        identifier: 'SessionContextAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductCategoryAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductCategoryHierarchyAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductCategoryPathAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductPricingAdapter',
+    },
+    {
+        module: 'commerce/productApi',
+        identifier: 'ProductSearchAdapter',
     },
     {
         module: 'lightning/analyticsWaveApi',
