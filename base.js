@@ -101,6 +101,30 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataConnector',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataConnectors',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataConnectorSourceFields',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataConnectorSourceObject',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataConnectorStatus',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataConnectorTypes',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
         identifier: 'getDataflowJob',
     },
     {
@@ -133,7 +157,15 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/analyticsWaveApi',
+        identifier: 'getReplicatedDataset',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
         identifier: 'getReplicatedDatasets',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getReplicatedFields',
     },
     {
         module: 'lightning/analyticsWaveApi',
