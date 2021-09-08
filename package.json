@@ -18,8 +18,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@babel/core": "~7.15.0",
-    "@babel/eslint-parser": "~7.15.0",
+    "@babel/core": "~7.15.5",
+    "@babel/eslint-parser": "~7.15.4",
     "eslint-restricted-globals": "~0.2.0"
   },
   "devDependencies": {
