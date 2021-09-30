@@ -110,6 +110,25 @@ describe('recommended config', () => {
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-attributes-during-construction');
     });
 
+    it('should prevent accessing the immediate children of this.template', () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const report = cli.executeOnText(`
+            import { LightningElement } from 'lwc';
+
+            export default class App extends LightningElement {
+                renderedCallback() {
+                    const element = this.template.firstChild;
+                    element.focus();
+                }
+            }
+        `);
+
+        const { messages } = report.results[0];
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-template-children');
+    });
+
     it('should prevent invalid usage of Apex method', () => {
         const cli = getCliEngineWithRecommendedRules();
 
