@@ -113,6 +113,7 @@ module.exports = {
         '@lwc/lwc/no-dupe-class-members': 'error',
         '@lwc/lwc/no-inner-html': 'error',
         '@lwc/lwc/no-leading-uppercase-api-name': 'error',
+        '@lwc/lwc/no-template-children': 'error',
         '@lwc/lwc/prefer-custom-event': 'error',
         '@lwc/lwc/valid-api': [
             'error',
