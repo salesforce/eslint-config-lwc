@@ -20,8 +20,8 @@ describe('i18n configs', () => {
         unlinkConfig();
     });
 
-    it('should load properly i18n config with other set', () => {
-        const cli = new eslint.CLIEngine({
+    it('should load properly i18n config with other set', async () => {
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: [
@@ -31,32 +31,32 @@ describe('i18n configs', () => {
             },
         });
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
         var moment = require('moment');
         var a = moment('2016-01-01'); 
         a.format();
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@salesforce/lightning/no-moment');
     });
 
-    it('extended set should include @salesforce/lightning/no-moment rule', () => {
-        const cli = new eslint.CLIEngine({
+    it('extended set should include @salesforce/lightning/no-moment rule', async () => {
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/i18n',
             },
         });
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
         var moment = require('moment');
         var a = moment('2016-01-01'); 
         a.format();
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@salesforce/lightning/no-moment');
     });

@@ -12,7 +12,7 @@ const eslint = require('eslint');
 const { linkConfig, unlinkConfig } = require('./utils');
 
 function getCliEngineWithRecommendedRules() {
-    return new eslint.CLIEngine({
+    return new eslint.ESLint({
         useEslintrc: false,
         baseConfig: {
             extends: '@salesforce/eslint-config-lwc/recommended',
@@ -36,45 +36,45 @@ describe('recommended config', () => {
         unlinkConfig();
     });
 
-    it('should load properly recommended config', () => {
+    it('should load properly recommended config', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
-        const report = cli.executeOnText('document.querySelectorAll("a")');
+        const results = await cli.lintText('document.querySelectorAll("a")');
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-document-query');
     });
 
-    it('should forbid mixing uppercase and underscore characters in public properties', () => {
+    it('should forbid mixing uppercase and underscore characters in public properties', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
             import { LightningElement, api } from 'lwc';
             export default class Foo extends LightningElement {
                 @api bar_Foo() {}
             }
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/valid-api');
     });
 
-    it('should suggest usage of CustomEvent over Event constructor', () => {
+    it('should suggest usage of CustomEvent over Event constructor', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
-        const report = cli.executeOnText(`dispatchEvent(new Event('test'));`);
+        const results = await cli.lintText(`dispatchEvent(new Event('test'));`);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/prefer-custom-event');
     });
 
-    it('should forbid duplicate class members', () => {
+    it('should forbid duplicate class members', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
             import { LightningElement, api } from 'lwc';
 
             export default class App extends LightningElement {
@@ -85,16 +85,16 @@ describe('recommended config', () => {
             }
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.strictEqual(messages.length, 2);
-        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-dupe-class-members');
-        assert.strictEqual(messages[1].ruleId, '@lwc/lwc/no-dupe-class-members');
+        assert.strictEqual(messages[0].ruleId, 'no-dupe-class-members');
+        assert.strictEqual(messages[1].ruleId, 'no-dupe-class-members');
     });
 
-    it('should prevent attributes set during construction', () => {
+    it('should prevent attributes set during construction', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
             import { LightningElement } from 'lwc';
 
             export default class App extends LightningElement {
@@ -105,15 +105,15 @@ describe('recommended config', () => {
             }
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-attributes-during-construction');
     });
 
-    it('should prevent accessing the immediate children of this.template', () => {
+    it('should prevent accessing the immediate children of this.template', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
             import { LightningElement } from 'lwc';
 
             export default class App extends LightningElement {
@@ -124,20 +124,20 @@ describe('recommended config', () => {
             }
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/no-template-children');
     });
 
-    it('should prevent invalid usage of Apex method', () => {
+    it('should prevent invalid usage of Apex method', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
             import findContacts from '@salesforce/apex/ContactController.findContacts';
             findContacts('Ted');
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.strictEqual(messages.length, 1);
         assert.strictEqual(
             messages[0].ruleId,

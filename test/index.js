@@ -20,15 +20,15 @@ describe('default config', () => {
         unlinkConfig();
     });
 
-    it('should load properly base config when not specifying the config name', () => {
-        const cli = new eslint.CLIEngine({
+    it('should load properly base config when not specifying the config name', async () => {
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc',
             },
         });
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
             import { api } from 'lwc';
             class Foo {
                 @api({ param: true })
@@ -36,7 +36,7 @@ describe('default config', () => {
             }
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/valid-api');
     });
