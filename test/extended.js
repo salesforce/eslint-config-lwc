@@ -7,7 +7,7 @@
 'use strict';
 
 const assert = require('assert');
-const eslint = require('eslint');
+const eslintCompat = require('./eslintCompat.js');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
@@ -21,7 +21,7 @@ describe('extended config', () => {
     });
 
     it('should load properly extended config', async () => {
-        const cli = new eslint.ESLint({
+        const cli = new eslintCompat.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/extended',

@@ -1,7 +1,16 @@
 version: 2.1
 
+supported-eslint-versions: &supported-eslint-versions ["local", "7"]
+
 jobs:
   build:
+    parameters:
+      eslint-version:
+        type: string
+        description: >
+          Overrides the installed version of ESLint. When set to "local" the version of ESLint set
+          frozen in the yarn.lock is used.
+        default: "local"
     docker:
       - image: circleci/node
 
@@ -19,7 +28,14 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
-
+      - when:
+          condition:
+            not:
+              equal: [<<parameters.eslint-version>>, "local"]
+          steps:
+            - run:
+                name: Override version of eslint@<<parameters.eslint-version>>
+                command: yarn add eslint@<<parameters.eslint-version>> --dev
       - run: yarn format:check
       - run: yarn lint
       - run: yarn test
@@ -28,4 +44,7 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      - build
+      - build:
+          matrix:
+            parameters:
+              eslint-version: *supported-eslint-versions

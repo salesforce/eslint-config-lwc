@@ -8,11 +8,12 @@
 
 const assert = require('assert');
 const eslint = require('eslint');
+const eslintCompat = require('./eslintCompat.js');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
 function getCliEngineWithRecommendedRules() {
-    return new eslint.ESLint({
+    return new eslintCompat.ESLint({
         useEslintrc: false,
         baseConfig: {
             extends: '@salesforce/eslint-config-lwc/recommended',
@@ -86,9 +87,19 @@ describe('recommended config', () => {
         `);
 
         const { messages } = results[0];
-        assert.strictEqual(messages.length, 2);
-        assert.strictEqual(messages[0].ruleId, 'no-dupe-class-members');
-        assert.strictEqual(messages[1].ruleId, 'no-dupe-class-members');
+        const isEslint7 = !!eslint.CLIEngine;
+        const expected = isEslint7
+            ? ['@lwc/lwc/no-dupe-class-members', '@lwc/lwc/no-dupe-class-members']
+            : [
+                  '@lwc/lwc/no-dupe-class-members',
+                  'no-dupe-class-members',
+                  '@lwc/lwc/no-dupe-class-members',
+                  'no-dupe-class-members',
+              ];
+        assert.deepStrictEqual(
+            messages.map((_) => _.ruleId),
+            expected,
+        );
     });
 
     it('should prevent attributes set during construction', async () => {

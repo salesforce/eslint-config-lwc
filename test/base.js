@@ -7,7 +7,7 @@
 'use strict';
 
 const assert = require('assert');
-const eslint = require('eslint');
+const eslintCompat = require('./eslintCompat.js');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
@@ -21,7 +21,7 @@ describe('base config', () => {
     });
 
     it('should load properly base config', async () => {
-        const cli = new eslint.ESLint({
+        const cli = new eslintCompat.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/base',
@@ -42,7 +42,7 @@ describe('base config', () => {
     });
 
     it('should include @lwc/lwc/no-unknown-wire-adapters rule', async () => {
-        const cli = new eslint.ESLint({
+        const cli = new eslintCompat.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/base',
@@ -59,13 +59,12 @@ describe('base config', () => {
         `);
 
         const { messages } = results[0];
-        assert.equal(messages.length, 2);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/valid-wire');
-        assert.equal(messages[1].ruleId, '@lwc/lwc/no-unknown-wire-adapters');
+        assert.equal(messages.length, 1);
+        assert.equal(messages[0].ruleId, '@lwc/lwc/no-unknown-wire-adapters');
     });
 
     it('should include @lwc/lwc/no-unexpected-wire-adapter-usages', async () => {
-        const cli = new eslint.ESLint({
+        const cli = new eslintCompat.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/base',
@@ -83,8 +82,7 @@ describe('base config', () => {
         `);
 
         const { messages } = results[0];
-        assert.equal(messages.length, 2);
+        assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/no-unexpected-wire-adapter-usages');
-        assert.equal(messages[1].ruleId, '@lwc/lwc/valid-wire');
     });
 });
