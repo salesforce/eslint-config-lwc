@@ -7,7 +7,7 @@
 'use strict';
 
 const assert = require('assert');
-const eslintCompat = require('./eslintCompat.js');
+const eslint = require('eslint');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
@@ -21,7 +21,7 @@ describe('default config', () => {
     });
 
     it('should load properly base config when not specifying the config name', async () => {
-        const cli = new eslintCompat.ESLint({
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc',

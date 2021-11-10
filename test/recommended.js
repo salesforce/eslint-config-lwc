@@ -9,12 +9,11 @@
 const assert = require('assert');
 const eslint = require('eslint');
 const semver = require('semver');
-const eslintCompat = require('./eslintCompat.js');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
 function getCliEngineWithRecommendedRules() {
-    return new eslintCompat.ESLint({
+    return new eslint.ESLint({
         useEslintrc: false,
         baseConfig: {
             extends: '@salesforce/eslint-config-lwc/recommended',

@@ -7,7 +7,7 @@
 'use strict';
 
 const assert = require('assert');
-const eslintCompat = require('./eslintCompat.js');
+const eslint = require('eslint');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
@@ -21,7 +21,7 @@ describe('base config', () => {
     });
 
     it('should load properly base config', async () => {
-        const cli = new eslintCompat.ESLint({
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/base',
@@ -42,7 +42,7 @@ describe('base config', () => {
     });
 
     it('should include @lwc/lwc/no-unknown-wire-adapters rule', async () => {
-        const cli = new eslintCompat.ESLint({
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/base',
@@ -64,7 +64,7 @@ describe('base config', () => {
     });
 
     it('should include @lwc/lwc/no-unexpected-wire-adapter-usages', async () => {
-        const cli = new eslintCompat.ESLint({
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/base',

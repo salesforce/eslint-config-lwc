@@ -7,7 +7,7 @@
 'use strict';
 
 const assert = require('assert');
-const eslintCompat = require('./eslintCompat.js');
+const eslint = require('eslint');
 
 const { linkConfig, unlinkConfig } = require('./utils');
 
@@ -21,7 +21,7 @@ describe('i18n configs', () => {
     });
 
     it('should load properly i18n config with other set', async () => {
-        const cli = new eslintCompat.ESLint({
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: [
@@ -43,7 +43,7 @@ describe('i18n configs', () => {
     });
 
     it('extended set should include @salesforce/lightning/no-moment rule', async () => {
-        const cli = new eslintCompat.ESLint({
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/i18n',
