@@ -260,10 +260,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
-"@lwc/eslint-plugin-lwc@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.1.0.tgz#e2c70252c4c52a3f66facca653f5f93e1dd66dc9"
-  integrity sha512-0oU9tDTX2qF9efmwhLKl5R4jJhZfU5gaHdtNiYxv0kqL5N22xxGO20+AV+ShLt4QocCO/wrq6RO+lnw0ZzqeTQ==
+"@lwc/eslint-plugin-lwc@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.1.1.tgz#c4b670ca7b977f4abcf0356a7e41410552b2b9f3"
+  integrity sha512-e+66ZydcQ0HFs/hIsq2JXMWVDDG2BoYWCG2ZBs/Y23bLFAE+iPFOmli5cHS9QqVOYzx9HlOTkt0h/XweNoQ5xg==
   dependencies:
     minimatch "^3.0.4"
 

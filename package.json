@@ -23,7 +23,7 @@
     "eslint-restricted-globals": "~0.2.0"
   },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.1.0",
+    "@lwc/eslint-plugin-lwc": "^1.1.1",
     "@salesforce/eslint-plugin-lightning": "^0.1.0",
     "eslint": "^8.2.0",
     "eslint-plugin-import": "^2.25.2",
