@@ -8,6 +8,7 @@
 
 const assert = require('assert');
 const eslint = require('eslint');
+const semver = require('semver');
 const eslintCompat = require('./eslintCompat.js');
 
 const { linkConfig, unlinkConfig } = require('./utils');
@@ -87,7 +88,7 @@ describe('recommended config', () => {
         `);
 
         const { messages } = results[0];
-        const isEslint7 = !!eslint.CLIEngine;
+        const isEslint7 = semver.satisfies(eslint.version, '^7');
         const expected = isEslint7
             ? ['@lwc/lwc/no-dupe-class-members', '@lwc/lwc/no-dupe-class-members']
             : [
