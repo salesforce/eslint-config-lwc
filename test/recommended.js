@@ -87,7 +87,7 @@ describe('recommended config', () => {
         `);
 
         const { messages } = results[0];
-        const isEslint7 = semver.satisfies(eslint.version, '^7');
+        const isEslint7 = semver.satisfies(eslint.ESLint.version, '^7');
         const expected = isEslint7
             ? ['@lwc/lwc/no-dupe-class-members', '@lwc/lwc/no-dupe-class-members']
             : [
