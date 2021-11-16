@@ -87,15 +87,10 @@ describe('recommended config', () => {
         `);
 
         const { messages } = results[0];
-        const isEslint7 = semver.satisfies(eslint.ESLint.version, '^7');
-        const expected = isEslint7
+
+        const expected = semver.lt(eslint.ESLint.version, '8.0.0')
             ? ['@lwc/lwc/no-dupe-class-members', '@lwc/lwc/no-dupe-class-members']
-            : [
-                  '@lwc/lwc/no-dupe-class-members',
-                  'no-dupe-class-members',
-                  '@lwc/lwc/no-dupe-class-members',
-                  'no-dupe-class-members',
-              ];
+            : ['no-dupe-class-members', 'no-dupe-class-members'];
         assert.deepStrictEqual(
             messages.map((_) => _.ruleId),
             expected,
