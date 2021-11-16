@@ -6,6 +6,8 @@
  */
 'use strict';
 
+const semver = require('semver');
+const { ESLint } = require('eslint');
 const restrictedGlobals = require('eslint-restricted-globals');
 
 module.exports = {
@@ -110,7 +112,6 @@ module.exports = {
         '@lwc/lwc/no-async-operation': 'error',
         '@lwc/lwc/no-attributes-during-construction': 'error',
         '@lwc/lwc/no-document-query': 'error',
-        '@lwc/lwc/no-dupe-class-members': 'error',
         '@lwc/lwc/no-inner-html': 'error',
         '@lwc/lwc/no-leading-uppercase-api-name': 'error',
         '@lwc/lwc/no-template-children': 'error',
@@ -128,5 +129,11 @@ module.exports = {
         // Disable unresolved import rule since it doesn't work well with the way the LWC compiler
         // resolves the different modules
         'import/no-unresolved': 'off',
+
+        // Misc
+        // In ESLint v8 the built-in `no-dupe-class-member` rules added support for duplicated
+        // class fields. We should disable the `lwc/no-dupe-class-members` rule to avoid duplicated
+        // linting errors.
+        '@lwc/lwc/no-dupe-class-members': semver.lt(ESLint.version, '8.0.0') ? 'error' : 'off',
     },
 };
