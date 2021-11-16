@@ -20,8 +20,8 @@ describe('extended config', () => {
         unlinkConfig();
     });
 
-    it('should load properly extended config', () => {
-        const cli = new eslint.CLIEngine({
+    it('should load properly extended config', async () => {
+        const cli = new eslint.ESLint({
             useEslintrc: false,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/extended',
@@ -35,13 +35,13 @@ describe('extended config', () => {
             },
         });
 
-        const report = cli.executeOnText(`
+        const results = await cli.lintText(`
             export function sum(...args) {
                 return args.reduce((acc, val) => acc + val, 0);
             }
         `);
 
-        const { messages } = report.results[0];
+        const { messages } = results[0];
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/no-rest-parameter');
     });
