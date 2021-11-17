@@ -53,6 +53,10 @@ const KNOWN_WIRE_ADAPTERS = [
         identifier: 'ProductPricingAdapter',
     },
     {
+        module: 'commerce/paymentApi',
+        identifier: 'ClientPaymentAdapter',
+    },
+    {
         module: 'experience/cmsEditorApi',
         identifier: 'CmsEditorContextAdapter',
     },
@@ -98,6 +102,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
         module: 'commerce/productApi',
         identifier: 'ProductPricingAdapter',
+    },
+    {
+        module: 'commerce/paymentApi',
+        identifier: 'ClientPaymentAdapter',
     },
     {
         module: 'experience/cmsEditorApi',
