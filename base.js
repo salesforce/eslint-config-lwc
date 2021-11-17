@@ -52,6 +52,14 @@ const KNOWN_WIRE_ADAPTERS = [
         module: 'commerce/productApi',
         identifier: 'ProductPricingAdapter',
     },
+    {
+        module: 'experience/cmsEditorApi',
+        identifier: 'CmsEditorContextAdapter',
+    },
+    {
+        module: 'experience/cmsEditorApi',
+        identifier: 'CmsEditorContentAdapter',
+    },
 ];
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
@@ -90,6 +98,14 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
         module: 'commerce/productApi',
         identifier: 'ProductPricingAdapter',
+    },
+    {
+        module: 'experience/cmsEditorApi',
+        identifier: 'CmsEditorContextAdapter',
+    },
+    {
+        module: 'experience/cmsEditorApi',
+        identifier: 'CmsEditorContentAdapter',
     },
     {
         module: 'lightning/analyticsWaveApi',
