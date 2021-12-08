@@ -53,12 +53,20 @@ const KNOWN_WIRE_ADAPTERS = [
         identifier: 'ProductPricingAdapter',
     },
     {
-        module: 'experience/cmsEditorApi',
-        identifier: 'CmsEditorContextAdapter',
+        module: 'experience/cmsDeliveryApi',
+        identifier: 'getContent',
     },
     {
         module: 'experience/cmsEditorApi',
-        identifier: 'CmsEditorContentAdapter',
+        identifier: 'getContent',
+    },
+    {
+        module: 'experience/cmsEditorApi',
+        identifier: 'getContext',
+    },
+    {
+        module: 'experience/navigationMenuApi',
+        identifier: 'getNavigationMenu',
     },
 ];
 
@@ -100,12 +108,20 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'ProductPricingAdapter',
     },
     {
-        module: 'experience/cmsEditorApi',
-        identifier: 'CmsEditorContextAdapter',
+        module: 'experience/cmsDeliveryApi',
+        identifier: 'getContent',
     },
     {
         module: 'experience/cmsEditorApi',
-        identifier: 'CmsEditorContentAdapter',
+        identifier: 'getContent',
+    },
+    {
+        module: 'experience/cmsEditorApi',
+        identifier: 'getContext',
+    },
+    {
+        module: 'experience/navigationMenuApi',
+        identifier: 'getNavigationMenu',
     },
     {
         module: 'lightning/analyticsWaveApi',
