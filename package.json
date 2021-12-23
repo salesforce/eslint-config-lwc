@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@babel/core": "~7.16.0",
-    "@babel/eslint-parser": "~7.16.0",
+    "@babel/eslint-parser": "~7.16.3",
     "eslint-restricted-globals": "~0.2.0",
     "semver": "^7.3.5"
   },
