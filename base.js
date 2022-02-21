@@ -33,6 +33,10 @@ const KNOWN_WIRE_ADAPTERS = [
         identifier: 'SessionContextAdapter',
     },
     {
+        module: 'commerce/einsteinApi',
+        identifier: 'EinsteinProductRecommendationsAdapter',
+    },
+    {
         module: 'commerce/productApi',
         identifier: 'ProductAdapter',
     },
@@ -86,6 +90,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
         module: 'commerce/contextApi',
         identifier: 'SessionContextAdapter',
+    },
+    {
+        module: 'commerce/einsteinApi',
+        identifier: 'EinsteinProductRecommendationsAdapter',
     },
     {
         module: 'commerce/productApi',
