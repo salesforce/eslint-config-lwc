@@ -34,7 +34,7 @@ const KNOWN_WIRE_ADAPTERS = [
     },
     {
         module: 'commerce/einsteinApi',
-        identifier: 'EinsteinProductRecommendationsAdapter',
+        identifier: 'EinsteinProductRecommendationsAdapter', 
     },
     {
         module: 'commerce/productApi',
