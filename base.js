@@ -232,6 +232,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'getListUi',
     },
     {
+        module: 'lightning/uiListsApi',
+        identifier: 'getListInfosByName',
+    },
+    {
         module: 'lightning/uiObjectInfoApi',
         identifier: 'getObjectInfo',
     },
