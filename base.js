@@ -236,6 +236,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'getListInfosByName',
     },
     {
+        module: 'lightning/uiListsApi',
+        identifier: 'getListInfoByName',
+    },
+    {
         module: 'lightning/uiObjectInfoApi',
         identifier: 'getObjectInfo',
     },
@@ -257,12 +261,72 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/uiRecordApi',
+        identifier: 'getRecords',
+    },
+    {
+        module: 'lightning/uiRecordApi',
         identifier: 'getRecordCreateDefaults',
     },
     {
         module: 'lightning/uiRecordApi',
         identifier: 'getRecordUi',
     },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsCount'
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListCount'
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListInfoBatch'
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListInfo'
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsInfo'
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListRecords'
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListRecordsBatch'
+    },
+    {
+        module: 'lightning/uiRecordActionsApi',
+        identifier: 'getRecordActions'
+    },
+    {
+        module: 'lightning/uiRecordActionsApi',
+        identifier: 'getRelatedListActions'
+    },
+    {
+        module: 'lightning/uiRecordActionsApi',
+        identifier: 'getRelatedListsActions'
+    },
+    {
+        module: 'lightning/uiLayoutApi',
+        identifier: 'getLayout'
+    },
+    {
+        module: 'lightning/uiLayoutApi',
+        identifier: 'getLayoutUserState'
+    },
+    {
+        module: 'lightning/uiRecordAvatarApi',
+        identifier: 'getRecordAvatars'
+    },
+    {
+        module: 'lightning/uiAppsApi',
+        identifier: 'getNavItems'
+    }
 ];
 
 module.exports = {
