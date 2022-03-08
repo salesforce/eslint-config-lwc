@@ -273,60 +273,60 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListsCount'
+        identifier: 'getRelatedListsCount',
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListCount'
+        identifier: 'getRelatedListCount',
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListInfoBatch'
+        identifier: 'getRelatedListInfoBatch',
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListInfo'
+        identifier: 'getRelatedListInfo',
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListsInfo'
+        identifier: 'getRelatedListsInfo',
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListRecords'
+        identifier: 'getRelatedListRecords',
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListRecordsBatch'
+        identifier: 'getRelatedListRecordsBatch',
     },
     {
         module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRecordActions'
+        identifier: 'getRecordActions',
     },
     {
         module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRelatedListActions'
+        identifier: 'getRelatedListActions',
     },
     {
         module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRelatedListsActions'
+        identifier: 'getRelatedListsActions',
     },
     {
         module: 'lightning/uiLayoutApi',
-        identifier: 'getLayout'
+        identifier: 'getLayout',
     },
     {
         module: 'lightning/uiLayoutApi',
-        identifier: 'getLayoutUserState'
+        identifier: 'getLayoutUserState',
     },
     {
         module: 'lightning/uiRecordAvatarApi',
-        identifier: 'getRecordAvatars'
+        identifier: 'getRecordAvatars',
     },
     {
         module: 'lightning/uiAppsApi',
-        identifier: 'getNavItems'
-    }
+        identifier: 'getNavItems',
+    },
 ];
 
 module.exports = {
