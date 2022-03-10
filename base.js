@@ -300,30 +300,6 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'getRelatedListRecordsBatch',
     },
     {
-        module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRecordActions',
-    },
-    {
-        module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRelatedListActions',
-    },
-    {
-        module: 'lightning/uiRecordActionsApi',
-        identifier: 'getRelatedListsActions',
-    },
-    {
-        module: 'lightning/uiLayoutApi',
-        identifier: 'getLayout',
-    },
-    {
-        module: 'lightning/uiLayoutApi',
-        identifier: 'getLayoutUserState',
-    },
-    {
-        module: 'lightning/uiRecordAvatarApi',
-        identifier: 'getRecordAvatars',
-    },
-    {
         module: 'lightning/uiAppsApi',
         identifier: 'getNavItems',
     },
