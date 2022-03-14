@@ -228,16 +228,20 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'CurrentPageReference',
     },
     {
+        module: 'lightning/uiAppsApi',
+        identifier: 'getNavItems',
+    },
+    {
         module: 'lightning/uiListApi',
         identifier: 'getListUi',
     },
     {
         module: 'lightning/uiListsApi',
-        identifier: 'getListInfosByName',
+        identifier: 'getListInfoByName',
     },
     {
         module: 'lightning/uiListsApi',
-        identifier: 'getListInfoByName',
+        identifier: 'getListInfosByName',
     },
     {
         module: 'lightning/uiObjectInfoApi',
@@ -273,23 +277,11 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListsCount',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
         identifier: 'getRelatedListCount',
     },
     {
         module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListInfoBatch',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
         identifier: 'getRelatedListInfo',
-    },
-    {
-        module: 'lightning/uiRelatedListApi',
-        identifier: 'getRelatedListsInfo',
     },
     {
         module: 'lightning/uiRelatedListApi',
@@ -300,8 +292,20 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'getRelatedListRecordsBatch',
     },
     {
-        module: 'lightning/uiAppsApi',
-        identifier: 'getNavItems',
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsInfo',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListInfoBatch',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsCount',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsInfo',
     },
 ];
 
