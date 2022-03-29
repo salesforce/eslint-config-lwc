@@ -228,8 +228,16 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'CurrentPageReference',
     },
     {
+        module: 'lightning/uiAppsApi',
+        identifier: 'getNavItems',
+    },
+    {
         module: 'lightning/uiListApi',
         identifier: 'getListUi',
+    },
+    {
+        module: 'lightning/uiListsApi',
+        identifier: 'getListInfoByName',
     },
     {
         module: 'lightning/uiListsApi',
@@ -257,11 +265,39 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/uiRecordApi',
+        identifier: 'getRecords',
+    },
+    {
+        module: 'lightning/uiRecordApi',
         identifier: 'getRecordCreateDefaults',
     },
     {
         module: 'lightning/uiRecordApi',
         identifier: 'getRecordUi',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListCount',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListInfo',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListInfoBatch',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListRecords',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListRecordsBatch',
+    },
+    {
+        module: 'lightning/uiRelatedListApi',
+        identifier: 'getRelatedListsInfo',
     },
 ];
 
