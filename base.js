@@ -92,7 +92,7 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
         identifier: 'SessionContextAdapter',
     },
     {
-        module: 'commerce/ecommendationsApi',
+        module: 'commerce/recommendationsApi',
         identifier: 'ProductRecommendationsAdapter',
     },
     {
