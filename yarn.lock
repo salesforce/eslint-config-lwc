@@ -261,12 +261,12 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@lwc/eslint-plugin-lwc@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.1.2.tgz#b3815e7030aa006751e99f28d4a6c153bba1eda8"
-  integrity sha512-mkVTpyZhR+F5WHSe/wHiuw6AqOclXc8spWOddMvkYG07G21cSe8S8sxWk1cGkwa1V+yr/PaiABLcIFBOOSMI+A==
+"@lwc/eslint-plugin-lwc@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.2.1.tgz#4953dff14d2dabad22c967d4fd4b666ef45dbcd9"
+  integrity sha512-13a5XOultegAc4i4SyFk9367KOvvRy40zbRSKkApcNa9uMI6n9/C/yFMvwve6Mp6PaIsGXlKFWNkzwj+nADEzw==
   dependencies:
-    minimatch "^3.0.5"
+    minimatch "^5.0.1"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -484,6 +484,13 @@ brace-expansion@^1.1.7:
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
+
+brace-expansion@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-2.0.1.tgz#1edc459e0f0c548486ecf9fc99f2221364b9a0ae"
+  integrity sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==
+  dependencies:
+    balanced-match "^1.0.0"
 
 braces@^3.0.1, braces@~3.0.2:
   version "3.0.2"
@@ -1591,12 +1598,12 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^3.0.5:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
-  integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
+minimatch@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.0.1.tgz#fb9022f7528125187c92bd9e9b6366be1cf3415b"
+  integrity sha512-nLDxIFRyhDblz3qMuq+SoRZED4+miJ/G+tdDrjkkkRnjAsBexeGpgjLEQ0blJy7rHhR2b93rhQY4SvyWu9v03g==
   dependencies:
-    brace-expansion "^1.1.7"
+    brace-expansion "^2.0.1"
 
 minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.6"
