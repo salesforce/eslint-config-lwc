@@ -24,7 +24,7 @@
     "semver": "^7.3.5"
   },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.1.2",
+    "@lwc/eslint-plugin-lwc": "^1.2.1",
     "@salesforce/eslint-plugin-lightning": "^1.0.0",
     "eslint": "^8.12.0",
     "eslint-plugin-import": "^2.25.4",

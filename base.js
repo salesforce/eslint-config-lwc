@@ -330,5 +330,8 @@ module.exports = {
                 adapters: WIRE_ADAPTERS_WITH_RESTRICTED_USE,
             },
         ],
+
+        // LWC import validation
+        '@lwc/lwc/no-disallowed-lwc-imports': 'error',
     },
 };

@@ -85,4 +85,21 @@ describe('base config', () => {
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/no-unexpected-wire-adapter-usages');
     });
+
+    it('should include @lwc/lwc/no-disallowed-lwc-imports', async () => {
+        const cli = new eslint.ESLint({
+            useEslintrc: false,
+            baseConfig: {
+                extends: '@salesforce/eslint-config-lwc/base',
+            },
+        });
+
+        const results = await cli.lintText(`
+            import { yolo } from 'lwc';
+        `);
+
+        const { messages } = results[0];
+        assert.equal(messages.length, 1);
+        assert.equal(messages[0].ruleId, '@lwc/lwc/no-disallowed-lwc-imports');
+    });
 });
