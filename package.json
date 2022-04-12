@@ -15,7 +15,9 @@
     "format": "prettier --write \"**/*.{js,md}\"",
     "format:check": "prettier --check \"**/*.{js,md}\"",
     "lint": "eslint",
-    "test": "mocha"
+    "test": "mocha",
+    "release:version": "npm version",
+    "release:publish": "npm publish --registry=https://registry.npmjs.org"
   },
   "dependencies": {
     "@babel/core": "~7.17.8",
