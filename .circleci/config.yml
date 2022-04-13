@@ -5,10 +5,11 @@ supported-eslint-versions: &supported-eslint-versions ["local", "7"]
 deploy_filters: &deploy_filters
   filters:
     branches:
-      ignore: /.*/
-    tags:
+      # ignore: /.*/
+      only: /^jye\/streamline-release/
+    # tags:
       # Trigger on tags that begin with `v`
-      only: /^v.*/
+      # only: /^v.*/
 
 commands:
   save_yarn_cache:
