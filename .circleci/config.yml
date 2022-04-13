@@ -25,7 +25,6 @@ commands:
       - restore_cache:
           keys:
           - v1-yarn-deps-{{ checksum "yarn.lock" }}
-          - v1-yarn-deps-
 
 jobs:
   build:
