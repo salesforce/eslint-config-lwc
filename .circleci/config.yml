@@ -71,7 +71,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - restore_v1_cache
+      - restore_yarn_cache
       - run:
           name: Install dependencies and build
           command: yarn install --frozen-lockfile
