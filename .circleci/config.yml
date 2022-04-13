@@ -11,20 +11,21 @@ deploy_filters: &deploy_filters
       only: /^v.*/
 
 commands:
-  save_v1_cache:
-    description: Save cache for future build
+  save_yarn_cache:
+    description: Save Yarn cache for future build
     steps:
       - save_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: v1-yarn-deps-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules
-  restore_v1_cache:
-    description: Restore cache from previous build
+            - ~/.cache/yarn
+
+  restore_yarn_cache:
+    description: Restore Yarn cache from previous build
     steps:
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "yarn.lock" }}
-          - v1-dependencies-
+          - v1-yarn-deps-{{ checksum "yarn.lock" }}
+          - v1-yarn-deps-
 
 jobs:
   build:
@@ -40,12 +41,12 @@ jobs:
 
     steps:
       - checkout
-      - restore_v1_cache
+      - restore_yarn_cache
       - run:
           name: Install dependencies and build
-          command: yarn install --frozen-lock
+          command: yarn install --frozen-lockfile
 
-      - save_v1_cache
+      - save_yarn_cache
       - when:
           condition:
             not:
@@ -87,7 +88,7 @@ workflows:
           matrix:
             parameters:
               eslint-version: *supported-eslint-versions
-              
+
   build_and_test_and_deploy:
     jobs:
       - build:
