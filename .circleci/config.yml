@@ -78,7 +78,7 @@ jobs:
           command: npm config set "//registry.npmjs.org/:_authToken" "$NPM_AUTOMATION_TOKEN"
       - run:
           name: Publish package
-          command: yarn release:publish:ci
+          command: yarn release:publish
 
 workflows:
   build_and_test:

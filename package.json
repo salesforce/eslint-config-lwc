@@ -17,7 +17,7 @@
     "lint": "eslint",
     "test": "mocha",
     "release:version": "npm version",
-    "release:publish:ci": "npm publish --registry=https://registry.npmjs.org --dry-run"
+    "release:publish": "npm publish --registry=https://registry.npmjs.org --dry-run"
   },
   "dependencies": {
     "@babel/core": "~7.17.8",
