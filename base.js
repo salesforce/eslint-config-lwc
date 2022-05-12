@@ -137,6 +137,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/analyticsWaveApi',
+        identifier: 'getActions',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
         identifier: 'getAnalyticsLimits',
     },
     {
@@ -154,6 +158,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     {
         module: 'lightning/analyticsWaveApi',
         identifier: 'getDataConnectorSourceObject',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataConnectorSourceObjectDataPreviewWithFields',
     },
     {
         module: 'lightning/analyticsWaveApi',
@@ -181,6 +189,10 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/analyticsWaveApi',
+        identifier: 'getDataflows',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
         identifier: 'getDataset',
     },
     {
@@ -189,7 +201,23 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/analyticsWaveApi',
+        identifier: 'getDatasetVersion',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDatasetVersions',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getDependencies',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
         identifier: 'getRecipe',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getRecipeNotification',
     },
     {
         module: 'lightning/analyticsWaveApi',
@@ -213,7 +241,27 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     },
     {
         module: 'lightning/analyticsWaveApi',
+        identifier: 'getSecurityCoverageDatasetVersion',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
         identifier: 'getWaveFolders',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getWaveTemplate',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getWaveTemplateConfig',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getWaveTemplateReleaseNotes',
+    },
+    {
+        module: 'lightning/analyticsWaveApi',
+        identifier: 'getWaveTemplates',
     },
     {
         module: 'lightning/analyticsWaveApi',
