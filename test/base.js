@@ -49,18 +49,41 @@ describe('base config', () => {
             },
         });
 
-        const results = await cli.lintText(`
-            import { wire } from 'lwc';
-            import { Baz } from 'c/cmp';
-            class Foo {
-                @wire(Baz)
-                foo;
-            }
-        `);
+        const expectedFailures = [
+            'c/cmp',
+            'commerce/cmp',
+            'commerce/cmpApiInternal',
+            'experience/cmp',
+        ];
+        for (const bundleName of expectedFailures) {
+            const results = await cli.lintText(`
+                import { wire } from 'lwc';
+                import { getAdapter } from '${bundleName}';
+                class Foo {
+                    @wire(getAdapter)
+                    wiredProp;
+                }
+            `);
 
-        const { messages } = results[0];
-        assert.equal(messages.length, 1);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/no-unknown-wire-adapters');
+            const { messages } = results[0];
+            assert.equal(messages.length, 1);
+            assert.equal(messages[0].ruleId, '@lwc/lwc/no-unknown-wire-adapters');
+        }
+
+        const expectedSuccesses = ['commerce/cmpApi', 'experience/cmpApi'];
+        for (const bundleName of expectedSuccesses) {
+            const results = await cli.lintText(`
+                import { wire } from 'lwc';
+                import { getAdapter } from '${bundleName}';
+                class Foo {
+                    @wire(getAdapter)
+                    wiredProp;
+                }
+            `);
+
+            const { messages } = results[0];
+            assert.equal(messages.length, 0);
+        }
     });
 
     it('should include @lwc/lwc/no-unexpected-wire-adapter-usages', async () => {
@@ -71,19 +94,26 @@ describe('base config', () => {
             },
         });
 
-        const results = await cli.lintText(`
-            import { wire } from 'lwc';
-            import { CurrentPageReference } from 'lightning/navigation';
-            const reference = CurrentPageReference;
-            class Foo {
-                @wire(CurrentPageReference)
-                foo;
-            }
-        `);
+        const expectedFailures = [
+            ['lightning/navigation', 'CurrentPageReference'],
+            ['commerce/cmpApi', 'getAdapter'],
+            ['experience/cmpApi', 'getAdapter'],
+        ];
+        for (const [bundleName, cmpName] of expectedFailures) {
+            const results = await cli.lintText(`
+                import { wire } from 'lwc';
+                import { ${cmpName} } from '${bundleName}';
+                const reference = ${cmpName};
+                class Foo {
+                    @wire(${cmpName})
+                    wiredProp;
+                }
+            `);
 
-        const { messages } = results[0];
-        assert.equal(messages.length, 1);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/no-unexpected-wire-adapter-usages');
+            const { messages } = results[0];
+            assert.equal(messages.length, 1);
+            assert.equal(messages[0].ruleId, '@lwc/lwc/no-unexpected-wire-adapter-usages');
+        }
     });
 
     it('should include @lwc/lwc/no-disallowed-lwc-imports', async () => {
