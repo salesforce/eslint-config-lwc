@@ -16,120 +16,28 @@ const KNOWN_WIRE_ADAPTERS = [
         module: '@salesforce/**',
         identifier: '*',
     },
+    // All commerce API adapters
     {
-        module: 'commerce/cartApi',
-        identifier: 'CartItemsAdapter',
+        module: 'commerce/*Api',
+        identifier: '*',
     },
+    // All experience API adapters
     {
-        module: 'commerce/cartApi',
-        identifier: 'CartSummaryAdapter',
-    },
-    {
-        module: 'commerce/contextApi',
-        identifier: 'AppContextAdapter',
-    },
-    {
-        module: 'commerce/contextApi',
-        identifier: 'SessionContextAdapter',
-    },
-    {
-        module: 'commerce/recommendationsApi',
-        identifier: 'ProductRecommendationsAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductCategoryAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductCategoryHierarchyAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductCategoryPathAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductPricingAdapter',
-    },
-    {
-        module: 'experience/cmsDeliveryApi',
-        identifier: 'getContent',
-    },
-    {
-        module: 'experience/cmsEditorApi',
-        identifier: 'getContent',
-    },
-    {
-        module: 'experience/cmsEditorApi',
-        identifier: 'getContext',
-    },
-    {
-        module: 'experience/navigationMenuApi',
-        identifier: 'getNavigationMenu',
+        module: 'experience/*Api',
+        identifier: '*',
     },
 ];
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
+    // All commerce API adapters
     {
-        module: 'commerce/cartApi',
-        identifier: 'CartItemsAdapter',
+        module: 'commerce/*Api',
+        identifier: '*',
     },
+    // All experience API adapters
     {
-        module: 'commerce/cartApi',
-        identifier: 'CartSummaryAdapter',
-    },
-    {
-        module: 'commerce/contextApi',
-        identifier: 'AppContextAdapter',
-    },
-    {
-        module: 'commerce/contextApi',
-        identifier: 'SessionContextAdapter',
-    },
-    {
-        module: 'commerce/recommendationsApi',
-        identifier: 'ProductRecommendationsAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductCategoryAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductCategoryHierarchyAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductCategoryPathAdapter',
-    },
-    {
-        module: 'commerce/productApi',
-        identifier: 'ProductPricingAdapter',
-    },
-    {
-        module: 'experience/cmsDeliveryApi',
-        identifier: 'getContent',
-    },
-    {
-        module: 'experience/cmsEditorApi',
-        identifier: 'getContent',
-    },
-    {
-        module: 'experience/cmsEditorApi',
-        identifier: 'getContext',
-    },
-    {
-        module: 'experience/navigationMenuApi',
-        identifier: 'getNavigationMenu',
+        module: 'experience/*Api',
+        identifier: '*',
     },
     {
         module: 'lightning/analyticsWaveApi',
