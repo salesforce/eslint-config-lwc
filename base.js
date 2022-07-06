@@ -19,12 +19,12 @@ const KNOWN_WIRE_ADAPTERS = [
     // All commerce API adapters
     {
         module: 'commerce/*Api',
-        identifier: '*',
+        identifier: '*Adapter',
     },
     // All experience API adapters
     {
         module: 'experience/*Api',
-        identifier: '*',
+        identifier: 'get*',
     },
 ];
 
@@ -32,12 +32,12 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
     // All commerce API adapters
     {
         module: 'commerce/*Api',
-        identifier: '*',
+        identifier: '*Adapter',
     },
     // All experience API adapters
     {
         module: 'experience/*Api',
-        identifier: '*',
+        identifier: 'get*',
     },
     {
         module: 'lightning/analyticsWaveApi',
