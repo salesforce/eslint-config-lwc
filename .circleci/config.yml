@@ -2,6 +2,9 @@ version: 2.1
 
 supported-eslint-versions: &supported-eslint-versions ["local", "7"]
 
+orbs:
+  node: circleci/node@5.0.2
+
 commands:
   save_yarn_cache:
     description: Save Yarn cache for future build
@@ -20,6 +23,7 @@ commands:
 
 jobs:
   build:
+    executor: node/16
     parameters:
       eslint-version:
         type: string
