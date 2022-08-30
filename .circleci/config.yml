@@ -34,8 +34,6 @@ jobs:
           Overrides the installed version of ESLint. When set to "local" the version of ESLint set
           frozen in the yarn.lock is used.
         default: "local"
-    docker:
-      - image: circleci/node
 
     steps:
       - checkout
