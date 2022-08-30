@@ -2,8 +2,11 @@ version: 2.1
 
 supported-eslint-versions: &supported-eslint-versions ["local", "7"]
 
-orbs:
-  node: circleci/node@5.0.2
+executors:
+  node:
+    working_directory: ~/eslint-config-lwc
+    docker:
+      - image: cimg/node:16.17.0
 
 commands:
   save_yarn_cache:
@@ -23,7 +26,7 @@ commands:
 
 jobs:
   build:
-    executor: node/16
+    executor: node
     parameters:
       eslint-version:
         type: string
