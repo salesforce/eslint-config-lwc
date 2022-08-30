@@ -2,6 +2,12 @@ version: 2.1
 
 supported-eslint-versions: &supported-eslint-versions ["local", "7"]
 
+executors:
+  node:
+    working_directory: ~/eslint-config-lwc
+    docker:
+      - image: cimg/node:16.17.0
+
 commands:
   save_yarn_cache:
     description: Save Yarn cache for future build
@@ -20,6 +26,7 @@ commands:
 
 jobs:
   build:
+    executor: node
     parameters:
       eslint-version:
         type: string
@@ -27,8 +34,6 @@ jobs:
           Overrides the installed version of ESLint. When set to "local" the version of ESLint set
           frozen in the yarn.lock is used.
         default: "local"
-    docker:
-      - image: circleci/node
 
     steps:
       - checkout
