@@ -26,15 +26,15 @@
     "semver": "^7.3.8"
   },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.5.0",
+    "@lwc/eslint-plugin-lwc": "^1.5.1",
     "@salesforce/eslint-plugin-lightning": "^1.0.0",
-    "eslint": "^8.30.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^27.1.7",
-    "husky": "^8.0.2",
+    "eslint": "^8.32.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "mocha": "^10.2.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.3"
   },
   "peerDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.0.0",
