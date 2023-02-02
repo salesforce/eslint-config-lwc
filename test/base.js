@@ -142,7 +142,7 @@ describe('base config', () => {
         });
 
         const results = await cli.lintText(`
-            import { abc } from '@salesforce/graphql';
+            import { abc } from '@salesforce/lds/test';
         `);
 
         const { messages } = results[0];
