@@ -148,5 +148,9 @@ describe('base config', () => {
         const { messages } = results[0];
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, 'no-restricted-imports');
+        assert.equal(
+            messages[0].message,
+            "'@salesforce/lds/test' import is restricted from being used by a pattern. Please do not import from @salesforce/lds, these modules are ephemeral and could change at any time.",
+        );
     });
 });
