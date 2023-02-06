@@ -133,24 +133,47 @@ describe('base config', () => {
         assert.equal(messages[0].ruleId, '@lwc/lwc/no-disallowed-lwc-imports');
     });
 
-    it('should include no-restricted-imports', async () => {
-        const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+    describe('should include no-restricted-imports', () => {
+        it('should prevent nested imports', async () => {
+            const cli = new eslint.ESLint({
+                useEslintrc: false,
+                baseConfig: {
+                    extends: '@salesforce/eslint-config-lwc/base',
+                },
+            });
+
+            const results = await cli.lintText(`
+                import { abc } from '@salesforce/lds/test';
+            `);
+
+            const { messages } = results[0];
+            assert.equal(messages.length, 1);
+            assert.equal(messages[0].ruleId, 'no-restricted-imports');
+            assert.equal(
+                messages[0].message,
+                "'@salesforce/lds/test' import is restricted from being used by a pattern. Please do not import from @salesforce/lds, these modules are ephemeral and could change at any time.",
+            );
         });
 
-        const results = await cli.lintText(`
-            import { abc } from '@salesforce/lds/test';
-        `);
+        it('should prevent imports from restricted modules', async () => {
+            const cli = new eslint.ESLint({
+                useEslintrc: false,
+                baseConfig: {
+                    extends: '@salesforce/eslint-config-lwc/base',
+                },
+            });
 
-        const { messages } = results[0];
-        assert.equal(messages.length, 1);
-        assert.equal(messages[0].ruleId, 'no-restricted-imports');
-        assert.equal(
-            messages[0].message,
-            "'@salesforce/lds/test' import is restricted from being used by a pattern. Please do not import from @salesforce/lds, these modules are ephemeral and could change at any time.",
-        );
+            const results = await cli.lintText(`
+                import foo from '@salesforce/lds';
+            `);
+
+            const { messages } = results[0];
+            assert.equal(messages.length, 1);
+            assert.equal(messages[0].ruleId, 'no-restricted-imports');
+            assert.equal(
+                messages[0].message,
+                "'@salesforce/lds' import is restricted from being used by a pattern. Please do not import from @salesforce/lds, these modules are ephemeral and could change at any time.",
+            );
+        });
     });
 });
