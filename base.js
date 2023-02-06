@@ -296,7 +296,7 @@ module.exports = {
             {
                 patterns: [
                     {
-                        group: ['@salesforce/lds**'],
+                        group: ['@salesforce/lds', '@salesforce/lds/**'],
                         message:
                             'Please do not import from @salesforce/lds, these modules are ephemeral and could change at any time.',
                     },
