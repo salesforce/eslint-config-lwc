@@ -28,11 +28,11 @@
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.5.1",
     "@salesforce/eslint-plugin-lightning": "^1.0.0",
-    "eslint": "^8.32.0",
+    "eslint": "^8.33.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^13.1.1",
     "mocha": "^10.2.0",
     "prettier": "^2.8.3"
   },
