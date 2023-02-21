@@ -132,4 +132,72 @@ describe('base config', () => {
         assert.equal(messages.length, 1);
         assert.equal(messages[0].ruleId, '@lwc/lwc/no-disallowed-lwc-imports');
     });
+
+    describe('should include no-restricted-imports', () => {
+        describe('prevents imports from @salesforce/lds', () => {
+            it('should prevent nested imports', async () => {
+                setupBaseListConfigAndAssertMessages(
+                    `
+                    import { abc } from '@salesforce/lds/test';
+                `,
+                    [
+                        {
+                            ruleId: 'no-restricted-imports',
+                            message:
+                                "'@salesforce/lds/test' import is restricted from being used by a pattern. Please do not import from @salesforce/lds, these modules are ephemeral and could change at any time.",
+                        },
+                    ],
+                );
+            });
+
+            it('should prevent imports from restricted modules', async () => {
+                setupBaseListConfigAndAssertMessages(
+                    `
+                    import foo from '@salesforce/lds';
+                `,
+                    [
+                        {
+                            ruleId: 'no-restricted-imports',
+                            message:
+                                "'@salesforce/lds' import is restricted from being used by a pattern. Please do not import from @salesforce/lds, these modules are ephemeral and could change at any time.",
+                        },
+                    ],
+                );
+            });
+
+            it('does not prevent imports from similarly named modules', async () => {
+                setupBaseListConfigAndAssertMessages(
+                    `
+                    import foo from '@salesforce/ldsnotlds';
+                `,
+                );
+            });
+        });
+    });
 });
+
+/**
+ * Sets up the linter and runs it against the given text.
+ * @constructor
+ * @param {string} text - The text to lint
+ * @param {Object[]} expectedMessages - The employees who are responsible for the project.
+ * @param {string} expectedMessages[].ruleId - The lint rule id that should fail.
+ * @param {string} [expectedMessages[].message] - The message that the lint rule should throw.
+ */
+async function setupBaseListConfigAndAssertMessages(text, expectedMessages = []) {
+    const cli = new eslint.ESLint({
+        useEslintrc: false,
+        baseConfig: {
+            extends: '@salesforce/eslint-config-lwc/base',
+        },
+    });
+    const results = await cli.lintText(text);
+    const { messages } = results[0];
+    assert.equal(messages.length, expectedMessages.length);
+    for (var i = 0; i < expectedMessages.length; i++) {
+        assert.equal(messages[0].ruleId, expectedMessages[i].ruleId);
+        if (expectedMessages[i].message !== undefined) {
+            assert.equal(messages[0].message, expectedMessages[i].message);
+        }
+    }
+}
