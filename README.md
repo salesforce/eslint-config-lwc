@@ -71,7 +71,7 @@ Add the `i18n` configuration to the `extends` field in your `.eslintrc` configur
 ```
 
 **Goal:**
-Promote writing SSR-friendly components
+Promote writing server-side-rendering friendly components. We only recommend using this configuration if your components are running in experiences supporting LWC server-side-rendering.
 
 **Rules:**
 [ SSR specific rules ](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#lwc) only.
