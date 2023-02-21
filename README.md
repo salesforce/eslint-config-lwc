@@ -69,3 +69,21 @@ Add the `i18n` configuration to the `extends` field in your `.eslintrc` configur
     "extends": ["@salesforce/eslint-config-lwc/recommended", "@salesforce/eslint-config-lwc/i18n"]
 }
 ```
+
+### `@salesforce/eslint-config-lwc/ssr` configuration
+
+**Goal:**
+Promote writing server-side-rendering friendly components. We only recommend using this configuration if your components are running in experiences supporting LWC server-side-rendering.
+
+**Rules:**
+[ SSR specific rules ](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#lwc) only.
+
+**Usage:**
+
+Add the `ssr` configuration to the `extends` field in your `.eslintrc` configuration file, for example:
+
+```json
+{
+    "extends": ["@salesforce/eslint-config-lwc/recommended", "@salesforce/eslint-config-lwc/ssr"]
+}
+```
