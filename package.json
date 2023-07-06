@@ -20,8 +20,8 @@
     "release:publish": "npm publish --registry=https://registry.npmjs.org"
   },
   "dependencies": {
-    "@babel/core": "~7.22.5",
-    "@babel/eslint-parser": "~7.22.5",
+    "@babel/core": "~7.22.8",
+    "@babel/eslint-parser": "~7.22.7",
     "eslint-restricted-globals": "~0.2.0",
     "semver": "^7.5.3"
   },
@@ -34,7 +34,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "mocha": "^10.2.0",
-    "prettier": "^2.8.8"
+    "prettier": "^3.0.0"
   },
   "peerDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.0.0",
