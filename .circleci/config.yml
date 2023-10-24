@@ -6,7 +6,7 @@ executors:
   node:
     working_directory: ~/eslint-config-lwc
     docker:
-      - image: cimg/node:16.17.0
+      - image: cimg/node:18.18.0
 
 commands:
   save_yarn_cache:
@@ -51,7 +51,7 @@ jobs:
             - run:
                 name: Override version of eslint@<<parameters.eslint-version>>
                 command: yarn add eslint@<<parameters.eslint-version>> --dev
-      - run: 
+      - run:
           name: Check formatting
           command: yarn format:check
       - run:
