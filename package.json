@@ -56,7 +56,8 @@
     "extended.js",
     "i18n.js",
     "index.js",
-    "recommended.js"
+    "recommended.js",
+    "ssr.js"
   ],
   "lint-staged": {
     "*.js": [
