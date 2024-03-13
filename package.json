@@ -20,21 +20,21 @@
     "release:publish": "npm publish --registry=https://registry.npmjs.org"
   },
   "dependencies": {
-    "@babel/core": "~7.22.8",
-    "@babel/eslint-parser": "~7.22.7",
+    "@babel/core": "~7.24.0",
+    "@babel/eslint-parser": "~7.23.10",
     "eslint-restricted-globals": "~0.2.0",
-    "semver": "^7.5.3"
+    "semver": "^7.6.0"
   },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.6.3",
+    "@lwc/eslint-plugin-lwc": "^1.7.2",
     "@salesforce/eslint-plugin-lightning": "^1.0.0",
-    "eslint": "^8.44.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jest": "^27.2.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.9.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "mocha": "^10.2.0",
-    "prettier": "^3.0.0"
+    "prettier": "^3.2.5"
   },
   "peerDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.0.0",
