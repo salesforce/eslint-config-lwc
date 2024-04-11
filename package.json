@@ -50,6 +50,10 @@
   "engines": {
     "node": ">=10.0.0"
   },
+  "volta": {
+    "node": "20.12.2",
+    "yarn": "1.22.22"
+  },
   "files": [
     "lib",
     "base.js",
