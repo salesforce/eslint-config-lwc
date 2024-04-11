@@ -11,7 +11,7 @@
     "salesforce"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky || true",
     "format": "prettier --write \"**/*.{js,md}\"",
     "format:check": "prettier --check \"**/*.{js,md}\"",
     "lint": "eslint",
