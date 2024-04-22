@@ -122,6 +122,7 @@ module.exports = {
                 disallowUnderscoreUppercaseMix: true,
             },
         ],
+        '@lwc/lwc/valid-graphql-wire-adapter-callback-parameters': 'error',
 
         // Lightning
         '@salesforce/lightning/valid-apex-method-invocation': 'error',
