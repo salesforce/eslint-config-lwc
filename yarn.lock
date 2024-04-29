@@ -399,13 +399,13 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@lwc/eslint-plugin-lwc@^1.7.2":
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.7.2.tgz#0399f0bb3bce5b4ee7374a9c6c125692828a9e06"
-  integrity sha512-fvdW/yvkNfqgt2Cc4EJCRYE55QJVNXdDaVTHRk5i1kkKP2Xj3GG0nAsYwXYqApEeRpUTpUZljPlO29/SWRXJoA==
+"@lwc/eslint-plugin-lwc@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.8.1.tgz#aa93a7115ae913fb8a4c1ca0667f10043dba06dc"
+  integrity sha512-xtBvjT2Cxp20Vj/o+b7YeIJkAFXlZow90DoJGjqEyRxPb6pmWSZ3FzcrffSUOacETJey01UiA29rquRftJiH8A==
   dependencies:
     globals "^13.24.0"
-    minimatch "^9.0.3"
+    minimatch "^9.0.4"
 
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
@@ -2013,7 +2013,7 @@ minimatch@5.0.1:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimatch@9.0.3, minimatch@^9.0.3:
+minimatch@9.0.3:
   version "9.0.3"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-9.0.3.tgz#a6e00c3de44c3a542bfaae70abfc22420a6da825"
   integrity sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==
@@ -2031,6 +2031,13 @@ minimatch@^5.0.1:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.1.6.tgz#1cfcb8cf5522ea69952cd2af95ae09477f122a96"
   integrity sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==
+  dependencies:
+    brace-expansion "^2.0.1"
+
+minimatch@^9.0.4:
+  version "9.0.4"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-9.0.4.tgz#8e49c731d1749cbec05050ee5145147b32496a51"
+  integrity sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==
   dependencies:
     brace-expansion "^2.0.1"
 

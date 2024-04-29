@@ -150,4 +150,25 @@ describe('recommended config', () => {
             '@salesforce/lightning/valid-apex-method-invocation',
         );
     });
+
+    it('should prevent invalid usage of graphql error callback parameter', async () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const results = await cli.lintText(`
+            import { wire } from 'lwc';
+            import { gql, graphql } from 'lightning/uiGraphQLApi';
+        
+            class Test {
+                @wire(graphql, {})
+                wiredMethod({error, data}) {}
+        }`);
+
+        const { messages } = results[0];
+        console.log(messages);
+        assert.strictEqual(messages.length, 5);
+        assert.strictEqual(
+            messages[2].ruleId,
+            '@lwc/lwc/valid-graphql-wire-adapter-callback-parameters',
+        );
+    });
 });
