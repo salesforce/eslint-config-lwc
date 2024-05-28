@@ -24,6 +24,28 @@ Example of `.eslintrc`:
 
 For more details about configuration, please refer to the dedicated section in the ESLint documentation: https://eslint.org/docs/user-guide/configuring#using-a-shareable-configuration-package
 
+### Usage with TypeScript
+
+To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency add `"typescript"` to `parserOptions.babelOptions.parserOpts.plugins` in your `.eslintrc`.
+
+Example:
+```json
+{
+    "extends": ["@salesforce/eslint-config-lwc/recommended"],
+    "parserOptions": {
+        "babelOptions": {
+            "parserOpts": {
+                "plugins": [
+                    "classProperties",
+                    ["decorators", { "decoratorsBeforExport": false }],
+                    "typescript"
+                ]
+            }
+        }
+    },
+}
+```
+
 ## Configurations
 
 This package exposes 4 configurations for your usage.
