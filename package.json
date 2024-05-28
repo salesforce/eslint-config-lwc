@@ -1,83 +1,83 @@
 {
-  "name": "@salesforce/eslint-config-lwc",
-  "version": "3.5.3",
-  "main": "index.js",
-  "license": "MIT",
-  "description": "Opinionated ESLint configurations for LWC projects",
-  "keywords": [
-    "eslint",
-    "eslint-config",
-    "lwc",
-    "salesforce"
-  ],
-  "scripts": {
-    "prepare": "husky || true",
-    "format": "prettier --write \"**/*.{js,md}\"",
-    "format:check": "prettier --check \"**/*.{js,md}\"",
-    "lint": "eslint",
-    "test": "mocha",
-    "release:version": "npm version",
-    "release:publish": "npm publish --registry=https://registry.npmjs.org"
-  },
-  "dependencies": {
-    "@babel/core": "~7.24.4",
-    "@babel/eslint-parser": "~7.24.1",
-    "eslint-restricted-globals": "~0.2.0",
-    "semver": "^7.6.0"
-  },
-  "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.8.1",
-    "@salesforce/eslint-plugin-lightning": "^1.0.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^28.2.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "mocha": "^10.4.0",
-    "prettier": "^3.2.5"
-  },
-  "peerDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.0.0",
-    "@salesforce/eslint-plugin-lightning": "^1.0.0",
-    "eslint": "^7 || ^8",
-    "eslint-plugin-import": "*",
-    "eslint-plugin-jest": "*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/salesforce/eslint-config-lwc.git"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "volta": {
-    "node": "20.12.2",
-    "yarn": "1.22.22"
-  },
-  "files": [
-    "lib",
-    "base.js",
-    "extended.js",
-    "i18n.js",
-    "index.js",
-    "recommended.js",
-    "ssr.js"
-  ],
-  "lint-staged": {
-    "*.js": [
-      "eslint"
+    "name": "@salesforce/eslint-config-lwc",
+    "version": "3.5.3",
+    "main": "index.js",
+    "license": "MIT",
+    "description": "Opinionated ESLint configurations for LWC projects",
+    "keywords": [
+        "eslint",
+        "eslint-config",
+        "lwc",
+        "salesforce"
     ],
-    "*.{js,md}": [
-      "prettier --write"
-    ]
-  },
-  "mocha": {
-    "slow": 500
-  },
-  "prettier": {
-    "printWidth": 100,
-    "tabWidth": 4,
-    "singleQuote": true,
-    "trailingComma": "all"
-  }
+    "scripts": {
+        "prepare": "husky || true",
+        "format": "prettier --write \"**/*.{js,md}\"",
+        "format:check": "prettier --check \"**/*.{js,md}\"",
+        "lint": "eslint",
+        "test": "mocha",
+        "release:version": "npm version",
+        "release:publish": "npm publish --registry=https://registry.npmjs.org"
+    },
+    "dependencies": {
+        "@babel/core": "~7.24.4",
+        "@babel/eslint-parser": "~7.24.1",
+        "eslint-restricted-globals": "~0.2.0",
+        "semver": "^7.6.0"
+    },
+    "devDependencies": {
+        "@lwc/eslint-plugin-lwc": "^1.8.1",
+        "@salesforce/eslint-plugin-lightning": "^1.0.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jest": "^28.2.0",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.2",
+        "mocha": "^10.4.0",
+        "prettier": "^3.2.5"
+    },
+    "peerDependencies": {
+        "@lwc/eslint-plugin-lwc": "^1.0.0",
+        "@salesforce/eslint-plugin-lightning": "^1.0.0",
+        "eslint": "^7 || ^8",
+        "eslint-plugin-import": "*",
+        "eslint-plugin-jest": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/salesforce/eslint-config-lwc.git"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "volta": {
+        "node": "20.12.2",
+        "yarn": "1.22.22"
+    },
+    "files": [
+        "lib",
+        "base.js",
+        "extended.js",
+        "i18n.js",
+        "index.js",
+        "recommended.js",
+        "ssr.js"
+    ],
+    "lint-staged": {
+        "*.js": [
+            "eslint"
+        ],
+        "*.{js,md}": [
+            "prettier --write"
+        ]
+    },
+    "mocha": {
+        "slow": 500
+    },
+    "prettier": {
+        "printWidth": 100,
+        "tabWidth": 4,
+        "singleQuote": true,
+        "trailingComma": "all"
+    }
 }

@@ -29,6 +29,7 @@ For more details about configuration, please refer to the dedicated section in t
 To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency add `"typescript"` to `parserOptions.babelOptions.parserOpts.plugins` in your `.eslintrc`.
 
 Example:
+
 ```json
 {
     "extends": ["@salesforce/eslint-config-lwc/recommended"],
@@ -42,7 +43,7 @@ Example:
                 ]
             }
         }
-    },
+    }
 }
 ```
 
