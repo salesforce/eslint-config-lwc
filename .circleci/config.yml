@@ -1,70 +1,70 @@
 version: 2.1
 
-supported-eslint-versions: &supported-eslint-versions ["local", "7"]
+supported-eslint-versions: &supported-eslint-versions ['local', '7']
 
 executors:
-  node:
-    working_directory: ~/eslint-config-lwc
-    docker:
-      - image: cimg/node:20.12.2
+    node:
+        working_directory: ~/eslint-config-lwc
+        docker:
+            - image: cimg/node:20.12.2
 
 commands:
-  save_yarn_cache:
-    description: Save Yarn cache for future build
-    steps:
-      - save_cache:
-          key: v1-yarn-deps-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
+    save_yarn_cache:
+        description: Save Yarn cache for future build
+        steps:
+            - save_cache:
+                  key: v1-yarn-deps-{{ checksum "yarn.lock" }}
+                  paths:
+                      - ~/.cache/yarn
 
-  restore_yarn_cache:
-    description: Restore Yarn cache from previous build
-    steps:
-      - restore_cache:
-          keys:
-          - v1-yarn-deps-{{ checksum "yarn.lock" }}
+    restore_yarn_cache:
+        description: Restore Yarn cache from previous build
+        steps:
+            - restore_cache:
+                  keys:
+                      - v1-yarn-deps-{{ checksum "yarn.lock" }}
 
 jobs:
-  build:
-    executor: node
-    parameters:
-      eslint-version:
-        type: string
-        description: >
-          Overrides the installed version of ESLint. When set to "local" the version of ESLint set
-          frozen in the yarn.lock is used.
-        default: "local"
+    build:
+        executor: node
+        parameters:
+            eslint-version:
+                type: string
+                description: >
+                    Overrides the installed version of ESLint. When set to "local" the version of ESLint set
+                    frozen in the yarn.lock is used.
+                default: 'local'
 
-    steps:
-      - checkout
-      - restore_yarn_cache
-      - run:
-          name: Install dependencies and build
-          command: yarn install --frozen-lockfile
-
-      - save_yarn_cache
-      - when:
-          condition:
-            not:
-              equal: [<<parameters.eslint-version>>, "local"]
-          steps:
+        steps:
+            - checkout
+            - restore_yarn_cache
             - run:
-                name: Override version of eslint@<<parameters.eslint-version>>
-                command: yarn add eslint@<<parameters.eslint-version>> --dev
-      - run:
-          name: Check formatting
-          command: yarn format:check
-      - run:
-          name: Run linter
-          command: yarn lint
-      - run:
-          name: Run unit tests
-          command: yarn test
+                  name: Install dependencies and build
+                  command: yarn install --frozen-lockfile
+
+            - save_yarn_cache
+            - when:
+                  condition:
+                      not:
+                          equal: [<<parameters.eslint-version>>, 'local']
+                  steps:
+                      - run:
+                            name: Override version of eslint@<<parameters.eslint-version>>
+                            command: yarn add eslint@<<parameters.eslint-version>> --dev
+            - run:
+                  name: Check formatting
+                  command: yarn format:check
+            - run:
+                  name: Run linter
+                  command: yarn lint
+            - run:
+                  name: Run unit tests
+                  command: yarn test
 
 workflows:
-  build_and_test:
-    jobs:
-      - build:
-          matrix:
-            parameters:
-              eslint-version: *supported-eslint-versions
+    build_and_test:
+        jobs:
+            - build:
+                  matrix:
+                      parameters:
+                          eslint-version: *supported-eslint-versions
