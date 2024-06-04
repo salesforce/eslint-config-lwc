@@ -26,7 +26,7 @@ For more details about configuration, please refer to the dedicated section in t
 
 ### Usage with TypeScript
 
-To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency add `"typescript"` to `parserOptions.babelOptions.parserOpts.plugins` in your `.eslintrc`.
+To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, then add `"typescript"` to `parserOptions.babelOptions.parserOpts.plugins` in your `.eslintrc`.
 
 Example:
 
