@@ -26,30 +26,21 @@ For more details about configuration, please refer to the dedicated section in t
 
 ### Usage with TypeScript
 
-To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, then add `"typescript"` to `parserOptions.babelOptions.parserOpts.plugins` in your `.eslintrc`.
+To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, and extend any of the TypeScript-enabled [configurations](#configurations) (any config ending in `-ts`).
 
-Example:
-
+Example `.eslintrc`:
 ```json
 {
-    "extends": ["@salesforce/eslint-config-lwc/recommended"],
-    "parserOptions": {
-        "babelOptions": {
-            "parserOpts": {
-                "plugins": [
-                    "classProperties",
-                    ["decorators", { "decoratorsBeforExport": false }],
-                    "typescript"
-                ]
-            }
-        }
-    }
+    "extends": ["@salesforce/eslint-config-lwc/recommended-ts"]
 }
 ```
 
+> [!NOTE]
+> All provided configs use [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser). Compatibility with [@typescript-eslint/parser](https://npmjs.com/package/@typescript-eslint/parser) is not guaranteed.
+
 ## Configurations
 
-This package exposes 4 configurations for your usage.
+This package exposes multiple configurations for your usage.
 
 ### `@salesforce/eslint-config-lwc/base` configuration
 
