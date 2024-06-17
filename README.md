@@ -29,6 +29,7 @@ For more details about configuration, please refer to the dedicated section in t
 To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, and extend any of the TypeScript-enabled [configurations](#configurations) (any config ending in `-ts`).
 
 Example `.eslintrc`:
+
 ```json
 {
     "extends": ["@salesforce/eslint-config-lwc/recommended-ts"]
@@ -40,9 +41,9 @@ Example `.eslintrc`:
 
 ## Configurations
 
-This package exposes multiple configurations for your usage.
+This package exposes multiple configurations for your usage. Each configuration listed below is available for both JavaScript projects (no suffix) and TypeScript projects (with `-ts` suffix).
 
-### `@salesforce/eslint-config-lwc/base` configuration
+### `@salesforce/eslint-config-lwc/base` and `@salesforce/eslint-config-lwc/base-ts` configurations
 
 **Goal:**
 Prevent common pitfalls with LWC, and enforce other Salesforce platform restrictions.
@@ -50,7 +51,7 @@ Prevent common pitfalls with LWC, and enforce other Salesforce platform restrict
 **Rules:**
 [_LWC specific rules_](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#lwc) only.
 
-### `@salesforce/eslint-config-lwc/recommended` configuration
+### `@salesforce/eslint-config-lwc/recommended` and `@salesforce/eslint-config-lwc/recommended-ts` configurations
 
 **Goal:**
 Prevent common Javascript pitfalls and enforce all best practices.
@@ -58,7 +59,7 @@ Prevent common Javascript pitfalls and enforce all best practices.
 **Rules:**
 `@salesforce/eslint-config-lwc/base` rules + Most of the base [_Potential errors_](https://eslint.org/docs/rules/#possible-errors) rules + Some of the [_Best Practices_](https://eslint.org/docs/rules/#best-practices) rules + [_LWC Best Practices_](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#best-practices).
 
-### `@salesforce/eslint-config-lwc/extended` configuration
+### `@salesforce/eslint-config-lwc/extended` and `@salesforce/eslint-config-lwc/extended-ts` configurations
 
 **Goal:**
 Restrict usage of some Javascript language features known to be slow after the _COMPAT_ transformation. LWC runs in _COMPAT_ mode on older browsers (eg. IE11). To support new Javascript syntax and language features on older browser the LWC compiler transforms LWC modules. This linting configuration targets patterns known to be slow in _COMPAT_ mode.
@@ -66,7 +67,7 @@ Restrict usage of some Javascript language features known to be slow after the _
 **Rules:**
 `@salesforce/eslint-config-lwc/recommended` rules + restrict usage of some slow patterns in [_COMPAT_](https://github.com/salesforce/eslint-plugin-lwc/blob/master/README.md#compat-performance).
 
-### `@salesforce/eslint-config-lwc/i18n` configuration
+### `@salesforce/eslint-config-lwc/i18n` and `@salesforce/eslint-config-lwc/i18n-ts` configurations
 
 **Goal:**
 Promote usage of `@salesforce/i18n-service` over 3rd parties, promote internationalization (I18N) best practices.
@@ -84,7 +85,7 @@ Add the `i18n` configuration to the `extends` field in your `.eslintrc` configur
 }
 ```
 
-### `@salesforce/eslint-config-lwc/ssr` configuration
+### `@salesforce/eslint-config-lwc/ssr` and `@salesforce/eslint-config-lwc/ssr-ts` configurations
 
 **Goal:**
 Promote writing server-side-rendering friendly components. We only recommend using this configuration if your components are running in experiences supporting LWC server-side-rendering.
