@@ -24,7 +24,7 @@ Example of `.eslintrc`:
 
 For more details about configuration, please refer to the dedicated section in the ESLint documentation: https://eslint.org/docs/user-guide/configuring#using-a-shareable-configuration-package
 
-### Usage with TypeScript
+### [Experimental] Usage with TypeScript
 
 To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, and extend any of the TypeScript-enabled [configurations](#configurations) (any config ending in `-ts`).
 
