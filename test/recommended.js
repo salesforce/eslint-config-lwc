@@ -164,7 +164,6 @@ describe('recommended config', () => {
         }`);
 
         const { messages } = results[0];
-        console.log(messages);
         assert.strictEqual(messages.length, 5);
         assert.strictEqual(
             messages[2].ruleId,
