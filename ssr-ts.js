@@ -7,9 +7,9 @@
 'use strict';
 
 module.exports = {
-  extends: [
-    require.resolve('./ssr'),
-    // Must be second to override the default parser options
-    require.resolve('./lib/typescript')
-  ]
-}
+    extends: [
+        require.resolve('./ssr'),
+        // Must be second to override the default parser options
+        require.resolve('./lib/typescript'),
+    ],
+};
