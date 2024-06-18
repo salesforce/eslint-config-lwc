@@ -43,6 +43,10 @@
         "eslint-plugin-import": "*",
         "eslint-plugin-jest": "*"
     },
+    "resolutions": {
+        "//": "@typescript-eslint/utils >=7 requires eslint 8",
+        "@typescript-eslint/utils": "<7"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/salesforce/eslint-config-lwc.git"
