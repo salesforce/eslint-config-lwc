@@ -28,6 +28,11 @@ For more details about configuration, please refer to the dedicated section in t
 
 To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, and extend any of the TypeScript-enabled [configurations](#configurations) (any config ending in `-ts`).
 
+Note that these configs use [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser), and compatibility with [@typescript-eslint/parser](https://npmjs.com/package/@typescript-eslint/parser) is not guaranteed.
+
+> [!IMPORTANT]
+> While these configs are capable of parsing TypeScript files, not all rules support all TypeScript language features. For example, using type assertions (`variable as Type`) will break many rules.
+
 Example `.eslintrc`:
 
 ```json
@@ -35,9 +40,6 @@ Example `.eslintrc`:
     "extends": ["@salesforce/eslint-config-lwc/recommended-ts"]
 }
 ```
-
-> [!NOTE]
-> All provided configs use [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser). Compatibility with [@typescript-eslint/parser](https://npmjs.com/package/@typescript-eslint/parser) is not guaranteed.
 
 ## Configurations
 
