@@ -12,7 +12,12 @@ module.exports = {
         '@lwc/eslint-plugin-lwc', // https://github.com/salesforce/eslint-plugin-lwc
     ],
     rules: {
-        '@lwc/lwc/no-unsupported-ssr-properties': 'error',
-        '@lwc/lwc/no-restricted-browser-globals-during-ssr': 'error',
+        '@lwc/lwc/ssr/no-unsupported-properties': 'error',
+        '@lwc/lwc/ssr/no-restricted-browser-globals': 'error',
+        '@lwc/lwc/ssr/no-form-factor': 'error',
+        '@lwc/lwc/ssr/no-host-mutation-in-connected-callback': 'error',
+        '@lwc/lwc/ssr/no-node-env': 'error',
+        '@lwc/lwc/ssr/no-unsupported-node-api': 'error',
+        '@lwc/lwc/ssr/no-static-imports-of-user-specific-scoped-modules': 'error',
     },
 };
