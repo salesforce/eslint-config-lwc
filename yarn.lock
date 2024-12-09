@@ -287,7 +287,7 @@
 
 "@lwc/eslint-plugin-lwc@^1.9.0":
   version "1.9.0"
-  resolved "https://registry.npmjs.org/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.9.0.tgz#09ddc05e05c0d827cb40c27021c9c3868e519e33"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-1.9.0.tgz#09ddc05e05c0d827cb40c27021c9c3868e519e33"
   integrity sha512-z2wEUvLanstSl9o7VT/HAI7uFWHkTApz8N1ZpRQtyh8Hg6UbBZKLrg+vMxDED1vZVLu256i2KgYUWysVQyO4tg==
   dependencies:
     globals "^13.24.0"
