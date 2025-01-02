@@ -70,7 +70,13 @@ describe('base config', () => {
             assert.equal(messages[0].ruleId, '@lwc/lwc/no-unknown-wire-adapters');
         }
 
-        const expectedSuccesses = ['commerce/cmpApi', 'experience/cmpApi'];
+        const expectedSuccesses = [
+            'commerce/cmpApi',
+            'experience/cmpApi',
+            '@salesforce/apex',
+            'lightning/uiRecordApi',
+            'force/uiRecordApi',
+        ];
         for (const bundleName of expectedSuccesses) {
             const results = await cli.lintText(`
                 import { wire } from 'lwc';
