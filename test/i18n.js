@@ -21,14 +21,10 @@ describe('i18n configs', () => {
     });
 
     it('should load properly i18n config with other set', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: [
-                    '@salesforce/eslint-config-lwc/i18n',
-                    '@salesforce/eslint-config-lwc/base',
-                ],
-            },
+            baseConfig: [...lwcConfig.configs.i18n, ...lwcConfig.configs.base],
         });
 
         const results = await cli.lintText(`
@@ -43,11 +39,10 @@ describe('i18n configs', () => {
     });
 
     it('extended set should include @salesforce/lightning/no-moment rule', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/i18n',
-            },
+            baseConfig: [...lwcConfig.configs.i18n],
         });
 
         const results = await cli.lintText(`
@@ -72,14 +67,10 @@ describe('typescript i18n configs', () => {
     });
 
     it('should load properly i18n config with other set', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: [
-                    '@salesforce/eslint-config-lwc/i18n-ts',
-                    '@salesforce/eslint-config-lwc/base-ts',
-                ],
-            },
+            baseConfig: [...lwcConfig.configs.i18nTs, ...lwcConfig.configs.baseTs],
         });
 
         const results = await cli.lintText(`
@@ -94,11 +85,10 @@ describe('typescript i18n configs', () => {
     });
 
     it('extended set should include @salesforce/lightning/no-moment rule', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/i18n-ts',
-            },
+            baseConfig: [...lwcConfig.configs.i18nTs],
         });
 
         const results = await cli.lintText(`

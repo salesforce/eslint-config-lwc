@@ -21,11 +21,10 @@ describe('ssr configs', () => {
     });
 
     it('should load properly', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: ['@salesforce/eslint-config-lwc/ssr'],
-            },
+            baseConfig: [...lwcConfig.configs.ssr],
         });
 
         const results = await cli.lintText(`
@@ -73,11 +72,10 @@ describe('typescript ssr configs', () => {
     });
 
     it('should load properly', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: ['@salesforce/eslint-config-lwc/ssr-ts'],
-            },
+            baseConfig: [...lwcConfig.configs.ssrTs],
         });
 
         const results = await cli.lintText(`

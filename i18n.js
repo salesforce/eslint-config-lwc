@@ -6,13 +6,19 @@
  */
 'use strict';
 
-module.exports = {
-    plugins: ['@salesforce/eslint-plugin-lightning'],
+const pluginLighting = require('@salesforce/eslint-plugin-lightning');
 
-    rules: {
-        // I18N Rules
-        '@salesforce/lightning/no-aura-localization-service': 'warn',
-        '@salesforce/lightning/no-moment': 'warn',
-        '@salesforce/lightning/prefer-i18n-service': 'warn',
+module.exports = [
+    {
+        plugins: {
+            '@salesforce/lightning': pluginLighting, // https://github.com/salesforce/eslint-plugin-lightning
+        },
+
+        rules: {
+            // I18N Rules
+            '@salesforce/lightning/no-aura-localization-service': 'warn',
+            '@salesforce/lightning/no-moment': 'warn',
+            '@salesforce/lightning/prefer-i18n-service': 'warn',
+        },
     },
-};
+];
