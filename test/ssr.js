@@ -22,7 +22,7 @@ describe('ssr configs', () => {
 
     it('should load properly', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: ['@salesforce/eslint-config-lwc/ssr'],
             },
@@ -74,7 +74,7 @@ describe('typescript ssr configs', () => {
 
     it('should load properly', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: ['@salesforce/eslint-config-lwc/ssr-ts'],
             },

@@ -22,7 +22,7 @@ describe('default config', () => {
 
     it('should load properly base config when not specifying the config name', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc',
             },

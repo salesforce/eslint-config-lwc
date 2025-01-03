@@ -22,7 +22,7 @@ describe('extended config', () => {
 
     it('should load properly extended config', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/extended',
 
@@ -58,7 +58,7 @@ describe('extended config', () => {
 
     it('should load properly extended config', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/extended-ts',
 

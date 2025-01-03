@@ -6,6 +6,9 @@
  */
 'use strict';
 
+const eslintPluginLwc = require('@lwc/eslint-plugin-lwc');
+const languageOptions = require('./lib/defaults');
+
 const KNOWN_WIRE_ADAPTERS = [
     {
         module: 'lightning/**',
@@ -258,11 +261,11 @@ const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
 ];
 
 module.exports = {
-    extends: [require.resolve('./lib/defaults')],
+    languageOptions,
 
-    plugins: [
-        '@lwc/eslint-plugin-lwc', // https://github.com/salesforce/eslint-plugin-lwc
-    ],
+    plugins: {
+        '@lwc/lwc': eslintPluginLwc, // https://github.com/salesforce/eslint-plugin-lwc
+    },
 
     rules: {
         // LWC lifecycle hooks validation

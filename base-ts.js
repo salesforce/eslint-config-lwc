@@ -6,10 +6,13 @@
  */
 'use strict';
 
+const base = require('./base');
+const tsLanguageOptions = require('./lib/typescript');
+
 module.exports = {
-    extends: [
-        require.resolve('./base'),
-        // Must be second to override the default parser options
-        require.resolve('./lib/typescript'),
-    ],
+    ...base,
+    languageOptions: {
+        ...base.languageOptions,
+        ...tsLanguageOptions, // Must be second to override the default parser options
+    },
 };
