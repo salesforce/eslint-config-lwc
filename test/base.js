@@ -9,23 +9,14 @@
 const assert = require('assert');
 const eslint = require('eslint');
 
-const { linkConfig, unlinkConfig } = require('./utils');
+const baseConfig = require('../base');
+const baseTsConfig = require('../base-ts');
 
 describe('base config', () => {
-    before(() => {
-        linkConfig();
-    });
-
-    after(() => {
-        unlinkConfig();
-    });
-
     it('should load properly base config', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+            overrideConfigFile: true,
+            baseConfig,
         });
 
         const results = await cli.lintText(`
@@ -43,10 +34,8 @@ describe('base config', () => {
 
     it('should include @lwc/lwc/no-unknown-wire-adapters rule', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+            overrideConfigFile: true,
+            baseConfig,
         });
 
         const expectedFailures = [
@@ -88,10 +77,8 @@ describe('base config', () => {
 
     it('should include @lwc/lwc/no-unexpected-wire-adapter-usages', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+            overrideConfigFile: true,
+            baseConfig,
         });
 
         const expectedFailures = [
@@ -118,10 +105,8 @@ describe('base config', () => {
 
     it('should include @lwc/lwc/no-disallowed-lwc-imports', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
+            overrideConfigFile: true,
+            baseConfig,
         });
 
         const results = await cli.lintText(`
@@ -179,15 +164,10 @@ describe('base config', () => {
 describe('typescript base config', () => {
     let cli;
     before(() => {
-        linkConfig();
         cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: { extends: ['@salesforce/eslint-config-lwc/base-ts'] },
+            overrideConfigFile: true,
+            baseConfig: baseTsConfig,
         });
-    });
-
-    after(() => {
-        unlinkConfig();
     });
 
     it('should load properly base config', async () => {
@@ -286,10 +266,8 @@ describe('typescript base config', () => {
  */
 async function setupBaseListConfigAndAssertMessages(text, expectedMessages = []) {
     const cli = new eslint.ESLint({
-        useEslintrc: false,
-        baseConfig: {
-            extends: '@salesforce/eslint-config-lwc/base',
-        },
+        overrideConfigFile: true,
+        baseConfig,
     });
     const results = await cli.lintText(text);
     const { messages } = results[0];

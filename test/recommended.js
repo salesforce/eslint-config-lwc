@@ -14,7 +14,7 @@ const { linkConfig, unlinkConfig } = require('./utils');
 
 function getCliEngineWithRecommendedRules(typescript = false) {
     return new eslint.ESLint({
-        useEslintrc: false,
+        overrideConfigFile: true,
         baseConfig: {
             extends: `@salesforce/eslint-config-lwc/recommended${typescript ? '-ts' : ''}`,
 

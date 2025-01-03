@@ -22,7 +22,7 @@ describe('i18n configs', () => {
 
     it('should load properly i18n config with other set', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: [
                     '@salesforce/eslint-config-lwc/i18n',
@@ -44,7 +44,7 @@ describe('i18n configs', () => {
 
     it('extended set should include @salesforce/lightning/no-moment rule', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/i18n',
             },
@@ -73,7 +73,7 @@ describe('typescript i18n configs', () => {
 
     it('should load properly i18n config with other set', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: [
                     '@salesforce/eslint-config-lwc/i18n-ts',
@@ -95,7 +95,7 @@ describe('typescript i18n configs', () => {
 
     it('extended set should include @salesforce/lightning/no-moment rule', async () => {
         const cli = new eslint.ESLint({
-            useEslintrc: false,
+            overrideConfigFile: true,
             baseConfig: {
                 extends: '@salesforce/eslint-config-lwc/i18n-ts',
             },
