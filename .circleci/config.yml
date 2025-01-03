@@ -1,6 +1,6 @@
 version: 2.1
 
-supported-eslint-versions: &supported-eslint-versions ['local', '9']
+supported-eslint-versions: &supported-eslint-versions ['local']
 
 executors:
     node:
