@@ -6,10 +6,16 @@
  */
 'use strict';
 
-module.exports = {
-    extends: [
-        require.resolve('./ssr'),
-        // Must be second to override the default parser options
-        require.resolve('./lib/typescript'),
-    ],
-};
+const tsLanguageOptions = require('./lib/typescript');
+const ssr = require('./ssr');
+
+module.exports = [
+    ...ssr,
+    // The following config will take effect as explained in
+    // https://eslint.org/docs/latest/use/configure/configuration-files#cascading-configuration-objects
+    {
+        languageOptions: {
+            ...tsLanguageOptions,
+        },
+    },
+];

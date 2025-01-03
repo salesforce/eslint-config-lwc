@@ -19,20 +19,22 @@ describe('extended config', () => {
     after(() => {
         unlinkConfig();
     });
-
     it('should load properly extended config', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
+
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/extended',
-
-                // Required for https://github.com/jest-community/eslint-plugin-jest
-                settings: {
-                    jest: {
-                        version: '26',
+            baseConfig: [
+                ...lwcConfig.configs.extended,
+                {
+                    // Required for https://github.com/jest-community/eslint-plugin-jest
+                    settings: {
+                        jest: {
+                            version: '26',
+                        },
                     },
                 },
-            },
+            ],
         });
 
         const results = await cli.lintText(`
@@ -57,18 +59,20 @@ describe('extended config', () => {
     });
 
     it('should load properly extended config', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
             overrideConfigFile: true,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/extended-ts',
-
-                // Required for https://github.com/jest-community/eslint-plugin-jest
-                settings: {
-                    jest: {
-                        version: '26',
+            baseConfig: [
+                ...lwcConfig.configs.extendedTs,
+                {
+                    // Required for https://github.com/jest-community/eslint-plugin-jest
+                    settings: {
+                        jest: {
+                            version: '26',
+                        },
                     },
                 },
-            },
+            ],
         });
 
         const results = await cli.lintText(`

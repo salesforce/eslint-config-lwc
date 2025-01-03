@@ -9,10 +9,13 @@
 const base = require('./base');
 const tsLanguageOptions = require('./lib/typescript');
 
-module.exports = {
+module.exports = [
     ...base,
-    languageOptions: {
-        ...base.languageOptions,
-        ...tsLanguageOptions, // Must be second to override the default parser options
+    // The following config will take effect as explained in
+    // https://eslint.org/docs/latest/use/configure/configuration-files#cascading-configuration-objects
+    {
+        languageOptions: {
+            ...tsLanguageOptions,
+        },
     },
-};
+];

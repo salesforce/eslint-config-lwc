@@ -6,18 +6,23 @@
  */
 'use strict';
 
-module.exports = {
-    extends: [require.resolve('./lib/defaults')],
-    plugins: [
-        '@lwc/eslint-plugin-lwc', // https://github.com/salesforce/eslint-plugin-lwc
-    ],
-    rules: {
-        '@lwc/lwc/ssr-no-unsupported-properties': 'error',
-        '@lwc/lwc/ssr-no-restricted-browser-globals': 'error',
-        '@lwc/lwc/ssr-no-form-factor': 'error',
-        '@lwc/lwc/ssr-no-host-mutation-in-connected-callback': 'error',
-        '@lwc/lwc/ssr-no-node-env': 'error',
-        '@lwc/lwc/ssr-no-unsupported-node-api': 'error',
-        '@lwc/lwc/ssr-no-static-imports-of-user-specific-scoped-modules': 'error',
+const eslintPluginLwc = require('@lwc/eslint-plugin-lwc');
+const languageOptions = require('./lib/defaults');
+
+module.exports = [
+    {
+        languageOptions,
+        plugins: {
+            '@lwc/lwc': eslintPluginLwc, // https://github.com/salesforce/eslint-plugin-lwc
+        },
+        rules: {
+            '@lwc/lwc/ssr/no-unsupported-properties': 'error',
+            '@lwc/lwc/ssr/no-restricted-browser-globals': 'error',
+            '@lwc/lwc/ssr/no-form-factor': 'error',
+            '@lwc/lwc/ssr/no-host-mutation-in-connected-callback': 'error',
+            '@lwc/lwc/ssr/no-node-env': 'error',
+            '@lwc/lwc/ssr/no-unsupported-node-api': 'error',
+            '@lwc/lwc/ssr/no-static-imports-of-user-specific-scoped-modules': 'error',
+        },
     },
-};
+];
