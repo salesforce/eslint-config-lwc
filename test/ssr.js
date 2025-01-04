@@ -21,11 +21,10 @@ describe('ssr configs', () => {
     });
 
     it('should load properly', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: ['@salesforce/eslint-config-lwc/ssr'],
-            },
+            overrideConfigFile: true,
+            baseConfig: [...lwcConfig.configs.ssr],
         });
 
         const results = await cli.lintText(`
@@ -50,16 +49,16 @@ describe('ssr configs', () => {
 
         const { messages } = results[0];
         assert.equal(messages.length, 7);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/ssr/no-form-factor');
+        assert.equal(messages[0].ruleId, '@lwc/lwc/ssr-no-form-factor');
         assert.equal(
             messages[1].ruleId,
-            '@lwc/lwc/ssr/no-static-imports-of-user-specific-scoped-modules',
+            '@lwc/lwc/ssr-no-static-imports-of-user-specific-scoped-modules',
         );
-        assert.equal(messages[2].ruleId, '@lwc/lwc/ssr/no-restricted-browser-globals');
-        assert.equal(messages[3].ruleId, '@lwc/lwc/ssr/no-unsupported-properties');
-        assert.equal(messages[4].ruleId, '@lwc/lwc/ssr/no-host-mutation-in-connected-callback');
-        assert.equal(messages[5].ruleId, '@lwc/lwc/ssr/no-node-env');
-        assert.equal(messages[6].ruleId, '@lwc/lwc/ssr/no-unsupported-node-api');
+        assert.equal(messages[2].ruleId, '@lwc/lwc/ssr-no-restricted-browser-globals');
+        assert.equal(messages[3].ruleId, '@lwc/lwc/ssr-no-unsupported-properties');
+        assert.equal(messages[4].ruleId, '@lwc/lwc/ssr-no-host-mutation-in-connected-callback');
+        assert.equal(messages[5].ruleId, '@lwc/lwc/ssr-no-node-env');
+        assert.equal(messages[6].ruleId, '@lwc/lwc/ssr-no-unsupported-node-api');
     });
 });
 
@@ -73,11 +72,10 @@ describe('typescript ssr configs', () => {
     });
 
     it('should load properly', async () => {
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
         const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: ['@salesforce/eslint-config-lwc/ssr-ts'],
-            },
+            overrideConfigFile: true,
+            baseConfig: [...lwcConfig.configs.ssrTs],
         });
 
         const results = await cli.lintText(`
@@ -103,15 +101,15 @@ describe('typescript ssr configs', () => {
 
         const { messages } = results[0];
         assert.equal(messages.length, 7);
-        assert.equal(messages[0].ruleId, '@lwc/lwc/ssr/no-form-factor');
+        assert.equal(messages[0].ruleId, '@lwc/lwc/ssr-no-form-factor');
         assert.equal(
             messages[1].ruleId,
-            '@lwc/lwc/ssr/no-static-imports-of-user-specific-scoped-modules',
+            '@lwc/lwc/ssr-no-static-imports-of-user-specific-scoped-modules',
         );
-        assert.equal(messages[2].ruleId, '@lwc/lwc/ssr/no-restricted-browser-globals');
-        assert.equal(messages[3].ruleId, '@lwc/lwc/ssr/no-unsupported-properties');
-        assert.equal(messages[4].ruleId, '@lwc/lwc/ssr/no-host-mutation-in-connected-callback');
-        assert.equal(messages[5].ruleId, '@lwc/lwc/ssr/no-node-env');
-        assert.equal(messages[6].ruleId, '@lwc/lwc/ssr/no-unsupported-node-api');
+        assert.equal(messages[2].ruleId, '@lwc/lwc/ssr-no-restricted-browser-globals');
+        assert.equal(messages[3].ruleId, '@lwc/lwc/ssr-no-unsupported-properties');
+        assert.equal(messages[4].ruleId, '@lwc/lwc/ssr-no-host-mutation-in-connected-callback');
+        assert.equal(messages[5].ruleId, '@lwc/lwc/ssr-no-node-env');
+        assert.equal(messages[6].ruleId, '@lwc/lwc/ssr-no-unsupported-node-api');
     });
 });

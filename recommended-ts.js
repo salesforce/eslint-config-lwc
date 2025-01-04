@@ -6,10 +6,16 @@
  */
 'use strict';
 
-module.exports = {
-    extends: [
-        require.resolve('./recommended'),
-        // Must be second to override the default parser options
-        require.resolve('./lib/typescript'),
-    ],
-};
+const tsLanguageOptions = require('./lib/typescript');
+const recommended = require('./recommended');
+
+module.exports = [
+    ...recommended,
+    // The following config will take effect as explained in
+    // https://eslint.org/docs/latest/use/configure/configuration-files#cascading-configuration-objects
+    {
+        languageOptions: {
+            ...tsLanguageOptions,
+        },
+    },
+];
