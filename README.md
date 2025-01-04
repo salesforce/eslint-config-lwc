@@ -26,7 +26,7 @@ For more details about configuration, please refer to the dedicated section in t
 
 ### [Experimental] Usage with TypeScript
 
-To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, and use any of the TypeScript-enabled [configurations](#configurations) (any config ending in `Ts`).
+To enable working with TypeScript projects, install `@babel/preset-typescript` as a dependency, and apply any of the TypeScript-enabled [configurations](#configurations) (any config ending in `Ts`).
 
 Note that these configs use [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser), and compatibility with [@typescript-eslint/parser](https://npmjs.com/package/@typescript-eslint/parser) is not guaranteed.
 

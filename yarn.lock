@@ -273,10 +273,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lwc/eslint-plugin-lwc@^2.0.0-beta.2":
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-2.0.0-beta.2.tgz#97e2341e17659cd8e53dfd864deec700bb1185f5"
-  integrity sha512-TqnUK4tJ4FHnWRuum68mI6yA+3isJ7hpRhtdm+S65qGIiqp9kg5U8nBOWeaChLkp2LadbHEJkCxT6ggV/vbBgQ==
+"@lwc/eslint-plugin-lwc@^3.0.0-beta.1":
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-3.0.0-beta.1.tgz#e4d99e18e69ecfac91416b19bfb5897adaeb8a59"
+  integrity sha512-Dc49yFL1qiIunxKQT5Rr/YtzmAbL+WJ9Lv2ifmmynPx8ZnpzELzNjfxmvGALDjzg0fKQzZc89RuBZ51aUwxXPA==
   dependencies:
     globals "^13.24.0"
     minimatch "^9.0.4"
