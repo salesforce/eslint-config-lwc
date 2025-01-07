@@ -20,26 +20,27 @@
         "release:publish": "npm publish --registry=https://registry.npmjs.org"
     },
     "dependencies": {
-        "@babel/core": "~7.24.7",
-        "@babel/eslint-parser": "~7.24.7",
+        "@babel/core": "~7.26.0",
+        "@babel/eslint-parser": "~7.25.9",
+        "@eslint/js": "^9.17.0",
         "eslint-restricted-globals": "~0.2.0",
         "semver": "^7.6.2"
     },
     "devDependencies": {
-        "@lwc/eslint-plugin-lwc": "^2.0.0",
-        "@salesforce/eslint-plugin-lightning": "^1.0.0",
-        "eslint": "^8.57.0",
-        "eslint-plugin-import": "^2.29.1",
-        "eslint-plugin-jest": "~28.4.0",
+        "@lwc/eslint-plugin-lwc": "^3.0.0-beta.1",
+        "@salesforce/eslint-plugin-lightning": "^2.0.0-beta.1",
+        "eslint": "^9.17.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-jest": "~28.10.0",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.7",
         "mocha": "^10.4.0",
         "prettier": "^3.3.2"
     },
     "peerDependencies": {
-        "@lwc/eslint-plugin-lwc": "^1.0.0",
+        "@lwc/eslint-plugin-lwc": "^2.0.0",
         "@salesforce/eslint-plugin-lightning": "^1.0.0",
-        "eslint": "^7 || ^8",
+        "eslint": "^9",
         "eslint-plugin-import": "*",
         "eslint-plugin-jest": "*"
     },
