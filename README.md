@@ -12,7 +12,8 @@ Note that `@lwc/eslint-plugin-lwc`, `@salesforce/eslint-plugin-lightning`, `esli
 
 ## Usage
 
-_Starting with v4.0.0, @salesforce/eslint-config-lwc only supports eslint@v9. Use @salesforce/eslint-config-lwc@v3.x for older versions of eslint._
+> [!IMPORTANT]
+> Starting with v4.0.0, @salesforce/eslint-config-lwc only supports `eslint@v9`. Use `@salesforce/eslint-config-lwc@v3.x` for older versions of eslint.
 
 This repo exports the configurations as an array of config objects. [Apply](https://eslint.org/docs/latest/use/configure/combine-configs#apply-a-config-array) the appropriate [configuration](#Configurations) into your configuration using the spread operator.
 
