@@ -58,11 +58,16 @@
     "files": [
         "lib",
         "base.js",
+        "base-ts.js",
         "extended.js",
+        "extended-ts.js",
         "i18n.js",
+        "i18n-ts.js",
         "index.js",
         "recommended.js",
-        "ssr.js"
+        "recommended-ts.js",
+        "ssr.js",
+        "ssr-ts.js"
     ],
     "lint-staged": {
         "*.js": [
