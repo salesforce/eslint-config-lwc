@@ -24,6 +24,7 @@
         "@babel/eslint-parser": "~7.25.9",
         "@eslint/js": "^9.17.0",
         "eslint-restricted-globals": "~0.2.0",
+        "globals": "~15.14.0",
         "semver": "^7.6.2"
     },
     "devDependencies": {
