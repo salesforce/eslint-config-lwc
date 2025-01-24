@@ -285,11 +285,12 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lwc/eslint-plugin-lwc@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-2.0.0.tgz#694edde206843bf39bb29204fb0fe29270ffdec6"
-  integrity sha512-z2WM69J6GZuvmbAOh0t1dB3gYLWrdqLIwl+716FghrYOe7D+r025eD4b+MxHD994pMwR5/+Y7H28eYMAnEIKQg==
+"@lwc/eslint-plugin-lwc@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-2.1.0.tgz#4b4f2d0b7cbcdfd2e239e5609223198e13ec3835"
+  integrity sha512-HtKerllRM3tXhkU0ZYotdVVn/FyZzFMOUna32mlyt07BHCKhVspdEDcB0jCa6m3uDN8miEffdmgiYISVrk2EOQ==
   dependencies:
+    fast-xml-parser "^4.5.1"
     globals "^13.24.0"
     minimatch "^9.0.4"
 
@@ -1163,6 +1164,13 @@ fast-levenshtein@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
+
+fast-xml-parser@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.5.1.tgz#a7e665ff79b7919100a5202f23984b6150f9b31e"
+  integrity sha512-y655CeyUQ+jj7KBbYMc4FG01V8ZQqjN+gDYGJ50RtfsUB8iG9AmwmwoAgeKLJdmueKKMrH1RJ7yXHTSoczdv5w==
+  dependencies:
+    strnum "^1.0.5"
 
 fastq@^1.6.0:
   version "1.17.1"
@@ -2344,6 +2352,11 @@ strip-json-comments@3.1.1, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+
+strnum@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.0.5.tgz#5c4e829fe15ad4ff0d20c3db5ac97b73c9b072db"
+  integrity sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==
 
 supports-color@8.1.1:
   version "8.1.1"

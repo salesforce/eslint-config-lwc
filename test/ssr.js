@@ -28,7 +28,8 @@ describe('ssr configs', () => {
             },
         });
 
-        const results = await cli.lintText(`
+        const results = await cli.lintText(
+            `
             import { LightningElement } from 'lwc';
             import fs from 'node:fs';
             import { formFactor } from '@salesforce/client/formFactor';
@@ -46,7 +47,9 @@ describe('ssr configs', () => {
                 console.log(userId);
               }
             }
-        `);
+        `,
+            { filePath: 'testFile.ssrjs' },
+        );
 
         const { messages } = results[0];
         assert.equal(messages.length, 7);
@@ -80,7 +83,8 @@ describe('typescript ssr configs', () => {
             },
         });
 
-        const results = await cli.lintText(`
+        const results = await cli.lintText(
+            `
             import { LightningElement } from 'lwc';
             import fs from 'node:fs';
             import { formFactor } from '@salesforce/client/formFactor';
@@ -99,7 +103,9 @@ describe('typescript ssr configs', () => {
                 console.log(userId);
               }
             }
-        `);
+        `,
+            { filePath: 'testFile.ssrjs' },
+        );
 
         const { messages } = results[0];
         assert.equal(messages.length, 7);
