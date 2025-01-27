@@ -114,3 +114,4 @@ Add the `ssr` configuration to the `extends` field in your `.eslintrc` configura
 ```
 
 **TypeScript:** Use `@salesforce/eslint-config-lwc/ssr-ts` to use this config in TypeScript projects.
+Note : These configs use [@typescript-eslint/parser](https://npmjs.com/package/@typescript-eslint/parser).

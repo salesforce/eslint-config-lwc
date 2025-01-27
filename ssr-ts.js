@@ -16,6 +16,7 @@ module.exports = {
         },
         {
             files: ['**/*.ssrjs', '**/*.ssrts'],
+            parser: '@typescript-eslint/parser',
             parserOptions: {
                 project: null, // Skip type checking for .ssrjs and .ssrts files
             },
