@@ -13,14 +13,11 @@ module.exports = {
     ],
     overrides: [
         {
-            files: ['**/*.js', '**/*.ts'],
+            files: ['**/*.js'],
             processor: '@lwc/lwc/ssr',
         },
         {
-            files: ['**/*.ssrjs', '**/*.ssrts'],
-            parserOptions: {
-                project: null,
-            },
+            files: ['**/*.ssrjs'],
             rules: {
                 '@lwc/lwc/ssr-no-unsupported-properties': 'error',
                 '@lwc/lwc/ssr-no-restricted-browser-globals': 'error',

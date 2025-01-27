@@ -85,15 +85,36 @@ describe('typescript ssr configs', () => {
 
         const results = await cli.lintText(
             `
-            import { LightningElement } from 'lwc';
-            import fs from 'node:fs';
             import { formFactor } from '@salesforce/client/formFactor';
             import userId from '@salesforce/user/Id';
 
+            // Interface 
+            interface User {
+            id: number;
+            name: string;
+            }
+            const user: User = { id: 1, name: 'John Doe' };  // Violation: interface 
+
+            // Enum 
+            enum Status {
+            Pending = 'pending',
+            Approved = 'approved',
+            }
+            const currentStatus: Status = Status.Pending;  // Violation: enum (not parsable by JS parser)
+
+            function getLength<T>(arr: T[]): number {
+            return arr.length;
+            }
+            const length = getLength([1, 2, 3]);  // Violation: generic function (not parsable by JS parser)
+
+            function log(target: any) {
+            console.log('Class decorated!');
+            }
+            @log
             export default class Foo extends LightningElement {
-              connectedCallback(): void {
-                document.write("Hello world")
-                this.dispatchEvent("Hello world")
+              connectedCallback() {
+                document.write("Hello world");
+                this.dispatchEvent("Hello world");
                 console.log(formFactor);
                 this.setAttribute('class', \`my-child-\${this.fromOutside}\`);
                 if (process.env.NODE_ENV === 'development') {
@@ -103,8 +124,9 @@ describe('typescript ssr configs', () => {
                 console.log(userId);
               }
             }
+
         `,
-            { filePath: 'testFile.ssrjs' },
+            { filePath: 'testFile.ssrts' },
         );
 
         const { messages } = results[0];

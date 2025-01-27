@@ -28,13 +28,15 @@
     "devDependencies": {
         "@lwc/eslint-plugin-lwc": "^2.1.0",
         "@salesforce/eslint-plugin-lightning": "^1.0.0",
+        "@typescript-eslint/parser": "^8.22.0",
         "eslint": "^8.57.0",
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-jest": "~28.4.0",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.7",
         "mocha": "^10.4.0",
-        "prettier": "^3.3.2"
+        "prettier": "^3.3.2",
+        "typescript": "^5.7.3"
     },
     "peerDependencies": {
         "@lwc/eslint-plugin-lwc": "^2.1.0",
