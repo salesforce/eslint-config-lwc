@@ -15,7 +15,7 @@ module.exports = {
             processor: '@lwc/lwc/ssr',
         },
         {
-            files: ['**/*.ssrjs', '**/*.ssrts'],
+            files: ['**/*.ssrts'],
             parser: '@typescript-eslint/parser',
             rules: {
                 '@lwc/lwc/ssr-no-unsupported-properties': 'error',
