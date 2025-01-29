@@ -17,9 +17,6 @@ module.exports = {
         {
             files: ['**/*.ssrjs', '**/*.ssrts'],
             parser: '@typescript-eslint/parser',
-            parserOptions: {
-                project: null, // Skip type checking for .ssrjs and .ssrts files
-            },
             rules: {
                 '@lwc/lwc/ssr-no-unsupported-properties': 'error',
                 '@lwc/lwc/ssr-no-restricted-browser-globals': 'error',

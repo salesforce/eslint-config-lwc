@@ -43,7 +43,8 @@
         "@salesforce/eslint-plugin-lightning": "^1.0.0",
         "eslint": "^7 || ^8",
         "eslint-plugin-import": "*",
-        "eslint-plugin-jest": "*"
+        "eslint-plugin-jest": "*",
+        "@typescript-eslint/parser": "*"
     },
     "repository": {
         "type": "git",
