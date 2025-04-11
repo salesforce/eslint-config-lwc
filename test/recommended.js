@@ -13,18 +13,20 @@ const semver = require('semver');
 const { linkConfig, unlinkConfig } = require('./utils');
 
 function getCliEngineWithRecommendedRules(typescript = false) {
+    const lwcConfig = require('@salesforce/eslint-config-lwc');
     return new eslint.ESLint({
-        useEslintrc: false,
-        baseConfig: {
-            extends: `@salesforce/eslint-config-lwc/recommended${typescript ? '-ts' : ''}`,
-
-            // Required for https://github.com/jest-community/eslint-plugin-jest
-            settings: {
-                jest: {
-                    version: '26',
+        overrideConfigFile: true,
+        baseConfig: [
+            ...(typescript ? lwcConfig.configs.recommendedTs : lwcConfig.configs.recommended),
+            {
+                // Required for https://github.com/jest-community/eslint-plugin-jest
+                settings: {
+                    jest: {
+                        version: '26',
+                    },
                 },
             },
-        },
+        ],
     });
 }
 

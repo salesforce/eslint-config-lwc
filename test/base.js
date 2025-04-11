@@ -12,8 +12,15 @@ const eslint = require('eslint');
 const { linkConfig, unlinkConfig } = require('./utils');
 
 describe('base config', () => {
+    let cli;
     before(() => {
         linkConfig();
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
+        const baseConfig = lwcConfig.configs.base;
+        cli = new eslint.ESLint({
+            overrideConfigFile: true,
+            baseConfig,
+        });
     });
 
     after(() => {
@@ -21,13 +28,6 @@ describe('base config', () => {
     });
 
     it('should load properly base config', async () => {
-        const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
-        });
-
         const results = await cli.lintText(`
             import { api } from 'lwc';
             class Foo {
@@ -42,13 +42,6 @@ describe('base config', () => {
     });
 
     it('should include @lwc/lwc/no-unknown-wire-adapters rule', async () => {
-        const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
-        });
-
         const expectedFailures = [
             'c/cmp',
             'commerce/cmp',
@@ -87,13 +80,6 @@ describe('base config', () => {
     });
 
     it('should include @lwc/lwc/no-unexpected-wire-adapter-usages', async () => {
-        const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
-        });
-
         const expectedFailures = [
             ['lightning/navigation', 'CurrentPageReference'],
             ['commerce/cmpApi', 'getAdapter'],
@@ -117,13 +103,6 @@ describe('base config', () => {
     });
 
     it('should include @lwc/lwc/no-disallowed-lwc-imports', async () => {
-        const cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: {
-                extends: '@salesforce/eslint-config-lwc/base',
-            },
-        });
-
         const results = await cli.lintText(`
             import { yolo } from 'lwc';
         `);
@@ -180,9 +159,11 @@ describe('typescript base config', () => {
     let cli;
     before(() => {
         linkConfig();
+        const lwcConfig = require('@salesforce/eslint-config-lwc');
+        const baseTsConfig = lwcConfig.configs.baseTs;
         cli = new eslint.ESLint({
-            useEslintrc: false,
-            baseConfig: { extends: ['@salesforce/eslint-config-lwc/base-ts'] },
+            overrideConfigFile: true,
+            baseConfig: baseTsConfig,
         });
     });
 
@@ -285,11 +266,11 @@ describe('typescript base config', () => {
  * @param {string} [expectedMessages[].message] - The message that the lint rule should throw.
  */
 async function setupBaseListConfigAndAssertMessages(text, expectedMessages = []) {
+    const lwcConfig = require('@salesforce/eslint-config-lwc');
+    const baseConfig = lwcConfig.configs.base;
     const cli = new eslint.ESLint({
-        useEslintrc: false,
-        baseConfig: {
-            extends: '@salesforce/eslint-config-lwc/base',
-        },
+        overrideConfigFile: true,
+        baseConfig,
     });
     const results = await cli.lintText(text);
     const { messages } = results[0];
