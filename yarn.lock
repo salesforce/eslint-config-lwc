@@ -297,11 +297,12 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lwc/eslint-plugin-lwc@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-3.0.0-beta.2.tgz#512f4cccb1f436443daec57a9c1462ae77786981"
-  integrity sha512-tRjE+LwAeRbl1BaLZB+AiXV3DONEXX4I/1034DfrIYJBSy/j4yuLt2D9jxJ+lPejYGUpmQNqqTKtssNse4iNTQ==
+"@lwc/eslint-plugin-lwc@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@lwc/eslint-plugin-lwc/-/eslint-plugin-lwc-3.0.0.tgz#df5168cb951540ad41750cccfec06a047a2062bd"
+  integrity sha512-98Z9Jo/w/g5rvaCwW53MooEozle+Cz8ixSpdGS3ndcU3pxWPMuexzrkbEtWny3YKYR6tKw9QXlaDL8hexE4zMA==
   dependencies:
+    fast-xml-parser "^4.5.1"
     globals "~15.14.0"
     minimatch "~9.0.4"
 
@@ -338,10 +339,10 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@salesforce/eslint-plugin-lightning@^2.0.0-beta.1":
-  version "2.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/eslint-plugin-lightning/-/eslint-plugin-lightning-2.0.0-beta.1.tgz#29af608d0d10ccb2f6e935948b055029bb2dbd8b"
-  integrity sha512-oCyn2bg2icJTXnlzkiVMyVenjJHCuUZdielS2uuvzplJMykCbNdQp2MulSTmeGXfWNB1tGjLWXtL7RPVAswV+A==
+"@salesforce/eslint-plugin-lightning@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/eslint-plugin-lightning/-/eslint-plugin-lightning-2.0.0.tgz#234cffdd8357af9b13b65d044feab2477a19daea"
+  integrity sha512-lC3GL2j6B2wAGeTFWT0h47BFg+0R7naqqlQW+ANvNSaIC/qEB+tNSRcdAZ8DRTojsI3GRdpgq3FTB1llbrFBng==
 
 "@types/estree@^1.0.6":
   version "1.0.6"
@@ -1168,6 +1169,13 @@ fast-levenshtein@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
+
+fast-xml-parser@^4.5.1:
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.5.3.tgz#c54d6b35aa0f23dc1ea60b6c884340c006dc6efb"
+  integrity sha512-RKihhV+SHsIUGXObeVy9AXiBbFwkVk7Syp8XgwN5U3JV416+Gwp/GO9i0JYKmikykgz/UHRrrV4ROuZEo/T0ig==
+  dependencies:
+    strnum "^1.1.1"
 
 fastq@^1.6.0:
   version "1.17.1"
@@ -2347,6 +2355,11 @@ strip-json-comments@3.1.1, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+
+strnum@^1.1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.1.2.tgz#57bca4fbaa6f271081715dbc9ed7cee5493e28e4"
+  integrity sha512-vrN+B7DBIoTTZjnPNewwhx6cBA/H+IS7rfW68n7XxC1y7uoiGQBxaKzqucGUgavX15dJgiGztLJ8vxuEzwqBdA==
 
 supports-color@8.1.1:
   version "8.1.1"
