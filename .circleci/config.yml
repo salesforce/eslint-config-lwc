@@ -71,7 +71,7 @@ jobs:
 
     deploy:
         docker:
-            - image: circleci/node
+            - image: node
         steps:
             - checkout
             - restore_yarn_cache
