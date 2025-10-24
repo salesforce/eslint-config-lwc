@@ -124,6 +124,7 @@ module.exports = [
                 },
             ],
             '@lwc/lwc/valid-graphql-wire-adapter-callback-parameters': 'error',
+            '@lwc/lwc/newer-version-available': 'error',
 
             // Lightning
             '@salesforce/lightning/valid-apex-method-invocation': 'error',

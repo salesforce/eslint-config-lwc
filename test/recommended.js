@@ -158,7 +158,7 @@ describe('recommended config', () => {
 
         const results = await cli.lintText(`
             import { wire } from 'lwc';
-            import { gql, graphql } from 'lightning/uiGraphQLApi';
+            import { gql, graphql } from 'lightning/graphql';
         
             class Test {
                 @wire(graphql, {})
@@ -171,6 +171,23 @@ describe('recommended config', () => {
             messages[2].ruleId,
             '@lwc/lwc/valid-graphql-wire-adapter-callback-parameters',
         );
+    });
+
+    it('should suggest upgrading to new versions of libraries', async () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const results = await cli.lintText(`
+            import { wire } from 'lwc';
+            import { gql, graphql } from 'lightning/uiGraphQLApi';
+        
+            class Test {
+                @wire(graphql, {})
+                wiredMethod({errors, data}) {}
+        }`);
+
+        const { messages } = results[0];
+        assert.strictEqual(messages.length, 5);
+        assert.strictEqual(messages[0].ruleId, '@lwc/lwc/newer-version-available');
     });
 });
 
@@ -310,7 +327,7 @@ describe('typescript recommended config', () => {
 
         const results = await cli.lintText(`
             import { wire } from 'lwc';
-            import { gql, graphql } from 'lightning/uiGraphQLApi';
+            import { gql, graphql } from 'lightning/graphql';
         
             class Test {
                 @wire(graphql, {})
