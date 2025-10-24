@@ -68,6 +68,7 @@ jobs:
             - run:
                   name: Run unit tests
                   command: yarn test
+
     deploy:
         docker:
             - image: circleci/node
@@ -91,15 +92,16 @@ workflows:
                   matrix:
                       parameters:
                           eslint-version: *supported-eslint-versions
-    build_and_test_and_deploy:
-    jobs:
-        - build:
-              <<: *deploy_filters
-              matrix:
-                  parameters:
-                      eslint-version: *supported-eslint-versions
 
-        - deploy:
-              <<: *deploy_filters
-              requires:
-                  - build
+    build_and_test_and_deploy:
+        jobs:
+            - build:
+                <<: *deploy_filters
+                matrix:
+                    parameters:
+                        eslint-version: *supported-eslint-versions
+
+            - deploy:
+                <<: *deploy_filters
+                requires:
+                    - build
