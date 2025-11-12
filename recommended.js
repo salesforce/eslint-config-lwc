@@ -17,6 +17,20 @@ const eslintJs = require('@eslint/js');
 
 const base = require('./base');
 
+// Some of the eslint-plugin-jest rules require jest to be installed and crashes ESLint if it's not present.
+// Exclude these rules if jest is not installed.
+// See https://github.com/salesforce/eslint-config-lwc/issues/161 and https://github.com/jest-community/eslint-plugin-jest/issues/1831 for more details.
+const jestRulesToDisable = () => {
+    try {
+        require.resolve('jest');
+        return {};
+    } catch {
+        return {
+            'jest/no-deprecated-functions': 'off',
+        };
+    }
+};
+
 module.exports = [
     ...base,
     eslintJs.configs.recommended,
@@ -35,6 +49,7 @@ module.exports = [
             },
         },
         rules: {
+            ...jestRulesToDisable(),
             // Possible errors
             // https://eslint.org/docs/rules/#possible-errors
             'no-await-in-loop': 'error',
