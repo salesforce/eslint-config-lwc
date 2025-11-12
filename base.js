@@ -29,6 +29,10 @@ const KNOWN_WIRE_ADAPTERS = [
         module: 'experience/*Api',
         identifier: 'get*',
     },
+    {
+        module: 'force/**',
+        identifier: '*',
+    },
 ];
 
 const WIRE_ADAPTERS_WITH_RESTRICTED_USE = [
