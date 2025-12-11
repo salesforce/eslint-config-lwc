@@ -6,7 +6,7 @@ executors:
     node:
         working_directory: ~/eslint-config-lwc
         docker:
-            - image: cimg/node:20.12.2
+            - image: cimg/node:24.11.0
 
 deploy_filters: &deploy_filters
     filters:
