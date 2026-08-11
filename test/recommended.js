@@ -189,6 +189,20 @@ describe('recommended config', () => {
         assert.strictEqual(messages.length, 5);
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/newer-version-available');
     });
+
+    it('should require handling of error-first callback arguments', async () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const results = await cli.lintText(`
+            export function handler(err, data) {
+                return data;
+            }
+        `);
+
+        const { messages } = results[0];
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, 'n/handle-callback-err');
+    });
 });
 
 describe('typescript recommended config', () => {
