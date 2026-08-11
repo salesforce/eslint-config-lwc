@@ -5,10 +5,10 @@
 ## Installation
 
 ```sh
-npm install --save-dev @salesforce/eslint-config-lwc @lwc/eslint-plugin-lwc @salesforce/eslint-plugin-lightning eslint-plugin-import eslint-plugin-jest
+npm install --save-dev @salesforce/eslint-config-lwc @lwc/eslint-plugin-lwc @salesforce/eslint-plugin-lightning eslint-plugin-import eslint-plugin-jest eslint-plugin-n
 ```
 
-Note that `@lwc/eslint-plugin-lwc`, `@salesforce/eslint-plugin-lightning`, `eslint-plugin-import`, and `eslint-plugin-jest` are peer dependencies of `@salesforce/eslint-config-lwc`.
+Note that `@lwc/eslint-plugin-lwc`, `@salesforce/eslint-plugin-lightning`, `eslint-plugin-import`, `eslint-plugin-jest`, and `eslint-plugin-n` are peer dependencies of `@salesforce/eslint-config-lwc`.
 
 ## Usage
 
