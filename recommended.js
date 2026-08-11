@@ -12,6 +12,7 @@ const globals = require('globals');
 const restrictedGlobals = require('eslint-restricted-globals');
 const pluginJest = require('eslint-plugin-jest');
 const pluginImport = require('eslint-plugin-import');
+const pluginN = require('eslint-plugin-n');
 const pluginLighting = require('@salesforce/eslint-plugin-lightning');
 const eslintJs = require('@eslint/js');
 
@@ -39,6 +40,7 @@ module.exports = [
     {
         plugins: {
             '@salesforce/lightning': pluginLighting, // https://github.com/salesforce/eslint-plugin-lightning
+            n: pluginN, // https://github.com/eslint-community/eslint-plugin-n
         },
 
         languageOptions: {
@@ -82,8 +84,8 @@ module.exports = [
             'no-multi-str': 'error',
             'no-new': 'error',
             'no-new-func': 'error',
-            'no-new-object': 'error',
             'no-new-wrappers': 'error',
+            'no-object-constructor': 'error',
             'no-octal-escape': 'error',
             'no-proto': 'error',
             'no-return-assign': 'error',
@@ -113,8 +115,9 @@ module.exports = [
             'no-use-before-define': ['error', { functions: false }],
 
             // NodeJs style
-            // https://eslint.org/docs/rules/#nodejs-and-commonjs
-            'handle-callback-err': 'error',
+            // The core `handle-callback-err` rule is deprecated; the maintained equivalent
+            // lives in eslint-plugin-n. https://github.com/eslint-community/eslint-plugin-n
+            'n/handle-callback-err': 'error',
 
             // ES6
             // https://eslint.org/docs/rules/#ecmascript-6
