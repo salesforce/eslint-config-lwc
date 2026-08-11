@@ -74,6 +74,19 @@ describe('recommended config', () => {
         assert.strictEqual(messages[0].ruleId, '@lwc/lwc/prefer-custom-event');
     });
 
+    it('should forbid the Object constructor', async () => {
+        const cli = getCliEngineWithRecommendedRules();
+
+        const results = await cli.lintText(`
+            const o = new Object();
+            o.foo = 1;
+        `);
+
+        const { messages } = results[0];
+        assert.strictEqual(messages.length, 1);
+        assert.strictEqual(messages[0].ruleId, 'no-object-constructor');
+    });
+
     it('should forbid duplicate class members', async () => {
         const cli = getCliEngineWithRecommendedRules();
 
